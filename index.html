@@ -29,20 +29,6 @@
           }
         }
         </script>
-        <script>
-
-        $('textarea').bind("enterKey",function(e){
-           console.log("works");
-               var year = $("textarea").val();
-           window.location.href = 'https://kuchiriel.github.io/?msg='+year
-        });
-        $('textarea').keyup(function(e){
-            if(e.keyCode == 13)
-            {
-                $(this).trigger("enterKey");
-            }
-        });
-</script>
     </head>
     <body>
 
