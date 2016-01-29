@@ -31,20 +31,23 @@
         </script>
         <script>
 
-        var $year = $('#txtBox');
-    $year.on('change', function () {
-        var year = this.value;
-        window.location.href = 'https://kuchiriel.github.io/?msg='+year;
-
-        console.log(year)
-    }).change();
-
+        $('textarea').bind("enterKey",function(e){
+           console.log("works");
+               var year = $("textarea").val();
+           window.location.href = 'https://kuchiriel.github.io/?msg='+year
+        });
+        $('textarea').keyup(function(e){
+            if(e.keyCode == 13)
+            {
+                $(this).trigger("enterKey");
+            }
+        });
 </script>
     </head>
     <body>
 
         <div id="main">
-<input id="txtBox" type="textbox"></input>
+<input class="textarea" type="textbox"></input>
             <p>&nbsp;</p>
             <hr />
         </div>
