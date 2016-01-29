@@ -29,9 +29,21 @@
           }
         }
         </script>
+        <script>
+$( document ).ready(function() {
+        var $year = $('#txtBox');
+    $year.on('change', function () {
+        var year = this.value;
+        window.location.href = 'https://kuchiriel.github.io/?msg='+year;
+        console.log(year)
+    }).change();
+  });
+</script>
     </head>
     <body>
+
         <div id="main">
+<input id="txtBox" type="textbox"></input>
             <p>&nbsp;</p>
             <hr />
         </div>
