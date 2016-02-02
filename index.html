@@ -10,7 +10,48 @@
         <script type="text/javascript" src="jquery-1.12.0.min.js"></script>
         <script type="text/javascript" src="screenfull.min.js"></script>
         <script type="text/javascript" src="samaritan.js"></script>
+        <script type="text/javascript" src="rivescript.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script>
+        // Create our RiveScript interpreter.
+var rs = new RiveScript({
+    debug:   debugMode,
+    onDebug: onDebug
+});
+
+// Load our files from the brain/ folder.
+rs.loadFile([
+    "brain/begin.rive",
+    "brain/admin.rive",
+    "brain/clients.rive",
+    "brain/eliza.rive",
+    "brain/myself.rive",
+    "brain/rpg.rive",
+    "brain/javascript.rive"
+    ], on_load_success, on_load_error);
+
+function on_load_success () {
+    // Now to sort the replies!
+    rs.sortReplies();
+}
+function on_load_error (err) {
+    console.log("Loading error: " + err);
+}
+
+
+function sendMessage () {
+  
+    try {
+    var reply = rs.reply("soandso", text);
+    } catch(e) {
+        window.alert(e.message + "\n" + e.line);
+        console.log(e);
+    }
+    return false;
+}
+
+        </script>
+
         <script>
         window.onload = function(){
           if (annyang) {
