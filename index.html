@@ -38,16 +38,15 @@ function on_load_error (err) {
     console.log("Loading error: " + err);
 }
 
-
 function sendMessage (text) {
   
     try {
-    var reply = rs.reply("soandso", text);
+    var reply = rs.reply("Trevor", text);
     } catch(e) {
         window.alert(e.message + "\n" + e.line);
         console.log(e);
     }
-    return false;
+    return reply;
 }
 
         </script>
