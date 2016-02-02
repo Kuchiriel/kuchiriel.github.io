@@ -39,7 +39,7 @@ function on_load_error (err) {
 }
 
 
-function sendMessage () {
+function sendMessage (text) {
   
     try {
     var reply = rs.reply("soandso", text);
@@ -61,7 +61,8 @@ function sendMessage () {
               'samaritan *something': function(something) {
               // var audio = new Audio('robot_bleep.mp3');
                // audio.play();
-                window.location.href = 'https://kuchiriel.github.io/?msg='+something;
+               
+                window.location.href = 'https://kuchiriel.github.io/?msg='+sendMessage(text);
                 console.log(something);
               }
             };
