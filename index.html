@@ -33,6 +33,7 @@ rs.loadFile([
 function on_load_success () {
     // Now to sort the replies!
     rs.sortReplies();
+    console.log("replies sorted");
 }
 function on_load_error (err) {
     console.log("Loading error: " + err);
@@ -41,7 +42,7 @@ function on_load_error (err) {
 function sendMessage (text) {
   
     try {
-    var reply = rs.reply("Trevor", text);
+    var reply = rs.reply("Trevor", "hello");
     console.log(text);
     } catch(e) {
         window.alert(e.message + "\n" + e.line);
