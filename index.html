@@ -12,7 +12,8 @@
         <script type="text/javascript" src="samaritan.js"></script>
         <script type="text/javascript" src="rivescript.js"></script>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <script>
+        <script type="text/javascript">
+        var debugMode = false;
         // Create our RiveScript interpreter.
 var rs = new RiveScript({
     debug:   debugMode,
@@ -42,6 +43,7 @@ function sendMessage (text) {
   
     try {
     var reply = rs.reply("Trevor", text);
+    console.log(text);
     } catch(e) {
         window.alert(e.message + "\n" + e.line);
         console.log(e);
