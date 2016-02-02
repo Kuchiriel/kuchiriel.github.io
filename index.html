@@ -48,7 +48,7 @@ function on_load_error (err) {
 function sendMessage (text) {
   
     try {
-    var reply = rs.reply("Trevor", "hello");
+    var reply = rs.reply("Trevor", text);
     console.log(text);
     } catch(e) {
         window.alert(e.message + "\n" + e.line);
