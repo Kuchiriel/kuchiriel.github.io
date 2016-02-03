@@ -49,6 +49,18 @@ rs.loadFile([
     "brain/test.rive"
     ], on_load_success, on_load_error);
     
+    
+        rs.setSubroutine('disableSpeech', function(rs, args){
+	console.log("Engine: " + args);
+	botSpeech = false;
+	console.log("Engine: Speech Disabled"):
+});
+
+    rs.setSubroutine('enableSpeech', function(rs, args){
+	console.log("Engine: " + args);
+	botSpeech = true;
+	console.log("Engine: Speech Enabled"):
+});
 
 
 function on_load_success () {
@@ -74,12 +86,6 @@ function sendMessage (text) {
     }
     return reply;
 }
-
-    rs.setSubroutine('disablespeech', function(rs, args){
-	console.log("Engine: " + args);
-	botSpeech = false;
-	console.log("Engine: Speech Disabled"):
-});
 
 
         </script>
