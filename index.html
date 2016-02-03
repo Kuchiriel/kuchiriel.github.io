@@ -31,8 +31,8 @@ var rs = new RiveScript({
 });
 
 rs.setSubroutine('Speech', function(rs, args){
-	console.log(args);
-	botSpeech = false;
+	console.log(args)
+	botSpeech = false
 });
 
 
@@ -60,7 +60,6 @@ function on_load_error (err) {
 
 
 function sendMessage (text) {
-
     try {
     var reply = rs.reply("Trevor", text);
     console.log("Samaritan: " + reply);
@@ -82,11 +81,9 @@ function sendMessage (text) {
             console.log("script loaded");
             var commands = {
               'samaritan *something': function(something) {
-    
                console.log("You: " + something);
-         
                reply = sendMessage(something);
-               
+          
               if(botSpeech){
                responsiveVoice.speak(reply);
               }
