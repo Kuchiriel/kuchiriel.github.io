@@ -89,16 +89,15 @@ function sendMessage (text) {
             console.log("Engine: Loaded Speech Recognition");
             var commands = {
               'samaritan *something': function(something) {
-               console.log("You: " + something);
-              
-               reply = sendMessage(something);
-          
-              ((botSpeech) ? responsiveVoice.speak(reply) 
-              executeSamaritan("[speaking]") : 
+              console.log("You: " + something);
+              reply = sendMessage(something);
+              if (botSpeech) {
+              responsiveVoice.speak(reply);
+              executeSamaritan("[speaking]");
+              }
+              else {
               executeSamaritan(reply)
-              );
-        // window.location.href = 'https://kuchiriel.github.io/?msg='+sendMessage(something);
-                
+              }
               }
             };
             annyang.addCommands(commands);
