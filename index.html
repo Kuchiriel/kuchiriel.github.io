@@ -50,7 +50,7 @@ function sendMessage (text) {
   
     try {
     var reply = rs.reply("Trevor", text);
-    console.log(text);
+    console.log("Samaritan: "+reply);
     } catch(e) {
         window.alert(e.message + "\n" + e.line);
         console.log(e);
@@ -71,7 +71,7 @@ function sendMessage (text) {
                // audio.play();
                
                 window.location.href = 'https://kuchiriel.github.io/?msg='+sendMessage(something);
-                console.log(something);
+                console.log("You: "+something);
               }
             };
             annyang.addCommands(commands);
