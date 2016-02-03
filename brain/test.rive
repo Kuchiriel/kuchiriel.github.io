@@ -10,4 +10,4 @@
 - Disabling Speech <call>disableSpeech</call>
 
 + [*] (@enable @speech) [*]
-- Enabling Speech <call>disableSpeech</call>
+- Enabling Speech <call>enableSpeech</call>
