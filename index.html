@@ -75,9 +75,9 @@ function sendMessage (text) {
     return reply;
 }
 
-    rs.setSubroutine('Speech', function(rs, args){
-	console.log("Engine: " + args)
-	botSpeech = false
+    rs.setSubroutine('disablespeech', function(rs, args){
+	console.log("Engine: " + args);
+	botSpeech = false;
 });
 
         </script>
