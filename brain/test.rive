@@ -1,8 +1,10 @@
-+ fancy object
-- <call>fancyJSObject</call>
++ [*] shut up [*]
+- <call>botSpeech false</call>
 
-+ three bees
-- <call>fancyJSObject</call>
++ [*] stop talking [*]
+- <call>botSpeech false</call>
 
-+ helicopter
-- <call>fancyJSObject</call>
++ [*] disable speech [*]
+- <call>botSpeech false</call>
+
+
