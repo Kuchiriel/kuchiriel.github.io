@@ -4,4 +4,4 @@
 ! array speech = speech voice vocalization talk talking speak speaking
 
 + [*] (@disable @speech) [*]
-- I will <star> <star2> <call>Speech</call>
+- Disabling Speech <call>disablespeech</call>
