@@ -802,12 +802,16 @@ JSObjectHandler = (function() {
 
   JSObjectHandler.prototype.load = function(name, code) {
     var e, source;
-    source = "this._objects[\"" + name + "\"] = function(rs, args) {\n" + code.join('\n') + "}\n";
-    try {
-      return eval(source);
-    } catch (_error) {
-      e = _error;
-      return this._master.warn("Error evaluating JavaScript object: " + e.message);
+    if (typeof code === "function") {
+      return this._objects[name] = code;
+    } else {
+      source = "this._objects[\"" + name + "\"] = function(rs, args) {\n" + code.join("\n") + "}\n";
+      try {
+        return eval(source);
+      } catch (_error) {
+        e = _error;
+        return this._master.warn("Error evaluating JavaScript object: " + e.message);
+      }
     }
   };
 
@@ -1406,7 +1410,7 @@ module.exports = Parser;
 "use strict";
 var Brain, JSObjectHandler, Parser, RiveScript, VERSION, inherit_utils, sorting, utils;
 
-VERSION = "1.2.0";
+VERSION = "1.2.1";
 
 Parser = require("./parser");
 
