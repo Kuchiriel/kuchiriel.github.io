@@ -93,9 +93,10 @@ function sendMessage (text) {
               
                reply = sendMessage(something);
           
-              ((botSpeech) ? responsiveVoice.speak(reply); 
-              executeSamaritan("[speaking]"): 
-              executeSamaritan(reply););
+              ((botSpeech) ? responsiveVoice.speak(reply) 
+              executeSamaritan("[speaking]") : 
+              executeSamaritan(reply)
+              );
         // window.location.href = 'https://kuchiriel.github.io/?msg='+sendMessage(something);
                 
               }
