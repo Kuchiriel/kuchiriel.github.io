@@ -20,7 +20,6 @@
       
         var debugMode = false;
         var botSpeech = true;
-        var reply;
         // Create our RiveScript interpreter.
 
 
@@ -60,8 +59,8 @@ rs.setSubroutine('botSpeech', function(rs, args){
 function sendMessage (text) {
 
     try {
-    reply = rs.reply("Trevor", text);
-    console.log("Samaritan: "+reply);
+    var reply = rs.reply("Trevor", text);
+    console.log("Samaritan: " + reply);
     } catch(e) {
         window.alert(e.message + "\n" + e.line);
         console.log(e);
