@@ -49,7 +49,6 @@ p {
     font-size: 2em;
     font-family: "magdacleanmono";
 }
-
 #settings {
     width: 30px;
     height: 30px;
@@ -61,7 +60,7 @@ p {
 }
 
 @media(min-width: 900px){
-
+    
 #main p.hidden {
     color: #fff;
 }
