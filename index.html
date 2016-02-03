@@ -20,11 +20,14 @@
       
         var debugMode = false;
         var botSpeech = true;
+        var sucess = new Audio('bleep.mp3');
+        var error  new Audio('error.mp3');     
+               
         // Create our RiveScript interpreter.
 
 
 var rs = new RiveScript({
-    debug:   debugMode;
+    debug:   debugMode
 });
 
 rs.setSubroutine('Speech', function(rs, args){
@@ -61,9 +64,11 @@ function sendMessage (text) {
     try {
     var reply = rs.reply("Trevor", text);
     console.log("Samaritan: " + reply);
+    sucess.play();
     } catch(e) {
         window.alert(e.message + "\n" + e.line);
         console.log(e);
+        error.play();
     }
     return reply;
 }
@@ -77,10 +82,9 @@ function sendMessage (text) {
             console.log("script loaded");
             var commands = {
               'samaritan *something': function(something) {
-               var audio = new Audio('bleep.mp3');
-               audio.play();
+    
                console.log("You: " + something);
-           
+         
                reply = sendMessage(something);
                
               if(botSpeech){
