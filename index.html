@@ -16,12 +16,12 @@
         <link rel="stylesheet" type="text/css" href="style.css">
         
         
-        <script type="text/javascript">
+        <script>
       
         var debugMode = false;
         var botSpeech = true;
-        var sucess = new Audio('bleep.mp3');
-        var error  new Audio('error.mp3');     
+        var success = new Audio('bleep.mp3');
+        var error = new Audio('error.mp3');     
                
         // Create our RiveScript interpreter.
 
@@ -64,7 +64,7 @@ function sendMessage (text) {
     try {
     var reply = rs.reply("Trevor", text);
     console.log("Samaritan: " + reply);
-    sucess.play();
+    success.play();
     } catch(e) {
         window.alert(e.message + "\n" + e.line);
         console.log(e);
