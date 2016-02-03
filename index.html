@@ -65,7 +65,7 @@ function sendMessage (text) {
         window.alert(e.message + "\n" + e.line);
         console.log(e);
     }
-    return false;
+    return reply;
 }
 
         </script>
@@ -80,8 +80,8 @@ function sendMessage (text) {
                var audio = new Audio('bleep.mp3');
                audio.play();
                console.log("You: " + something);
-               
-               sendMessage(something);
+           
+               reply = sendMessage(something);
                
               if(botSpeech){
                responsiveVoice.speak(reply);
