@@ -2,10 +2,7 @@
     font-family: magdacleanmono;
     src: url(font/magdacleanmono-bold.ttf);
 }
-
-
 body {
-    
     color: #FFF;
     background-color: #000;
     height: 100%;
@@ -72,8 +69,8 @@ body {
     color: #000 !important;
     background-color: #fff;
 }
-#main hr { border-top: 2px solid #000; }
-
+#main hr { 
+    border-top: 2px solid #000; 
 }
 body, html {
 background: rgba(255,255,255,1);
@@ -84,4 +81,5 @@ background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rg
 background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
 background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+}
 }
