@@ -1,5 +1,5 @@
 ! array disable = disable shutdown stop
-^ |put off |turn off|take out| 
+
 ! array speech = speech voice vocalization talk talking
 
 + [*] (@disable) (@speech) [*]
