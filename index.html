@@ -40,6 +40,7 @@ rs.loadFile([
     ], on_load_success, on_load_error);
 
 rs.setSubroutine('botSpeech', function(rs, args){
+	console.log(args);
 	botSpeech = false;
 });
 
