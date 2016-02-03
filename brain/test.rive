@@ -6,8 +6,14 @@
 
 ! array speech = speech voice vocalization talk talking speak speaking
 
-+ [*] @disable @speech [*]
++ [*] @disable [@speech] [*]
 - Disabling Speech <call>toggleSpeech disable</call>
 
-+ [*] @enable @speech [*]
++ [*] @enable [@speech] [*]
+- Enabling Speech <call>toggleSpeech enable</call>
+
++ [*] [@speech] @disable [*]
+- Disabling Speech <call>toggleSpeech disable</call>
+
++ [*] [@speech] @enable [*]
 - Enabling Speech <call>toggleSpeech enable</call>
