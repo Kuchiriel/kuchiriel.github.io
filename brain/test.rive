@@ -1,10 +1,7 @@
-+ [*] shut up [*]
-- Ok, but no need not be stupid <call>Speech</call>
+! array disable = disable shutdown 
+^ stop|put off|turn off|take out|
 
-+ [*] stop talking [*]
-- Ok, i will stop talking <call>Speech</call>
+! array speech = speech voice vocalization talk talking speak speaking
 
-+ [*] disable speech [*]
-- I will disable speech <call>Speech</call>
-
-
++ [*] (@disable @speech) [*]
+- I will <star> <star2> <call>Speech</call>
