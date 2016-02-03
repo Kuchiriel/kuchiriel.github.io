@@ -49,6 +49,11 @@ function on_load_error (err) {
     console.log("Loading error: " + err);
 }
 
+rs.setSubroutine('botSpeech', function(rs, args){
+	console.log(args);
+	botSpeech = false;
+});
+
 
 function sendMessage (text) {
   
@@ -91,10 +96,7 @@ function sendMessage (text) {
         </script>
         <script>
         
-        rs.setSubroutine('botSpeech', function(rs, args){
-	console.log(args);
-	botSpeech = false;
-});	
+       	
         </script>
         
     </head>
