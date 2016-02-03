@@ -19,6 +19,7 @@
         <script type="text/javascript">
       
         var debugMode = false;
+        var botSpeech = true;
         // Create our RiveScript interpreter.
 
 
@@ -79,7 +80,10 @@ function sendMessage (text) {
                audio.play();
                console.log("You: " + something);
                reply = sendMessage(something);
+              
+              if(botSpeech){
                responsiveVoice.speak(reply);
+              }
                executeSamaritan(reply);
                // window.location.href = 'https://kuchiriel.github.io/?msg='+sendMessage(something);
                 
