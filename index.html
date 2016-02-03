@@ -69,8 +69,8 @@ function sendMessage (text) {
               'samaritan *something': function(something) {
               // var audio = new Audio('robot_bleep.mp3');
                // audio.play();
-               
-                window.location.href = 'https://kuchiriel.github.io/?msg='+sendMessage(something);
+               executeSamaritan(sendMessage(something));
+               // window.location.href = 'https://kuchiriel.github.io/?msg='+sendMessage(something);
                 console.log("You: "+something);
               }
             };
