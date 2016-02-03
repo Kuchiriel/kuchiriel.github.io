@@ -61,16 +61,10 @@ function on_load_error (err) {
 }
 
 
-        rs.setSubroutine('disableSpeech', function(rs, args){
+    rs.setSubroutine('toggleSpeech', function(rs, args){
 	console.log("Engine: " + args);
-	botSpeech = false;
-	console.log("Engine: Speech Disabled");
-});
-
-    rs.setSubroutine('enableSpeech', function(rs, args){
-	console.log("Engine: " + args);
-	botSpeech = true;
-	console.log("Engine: Speech Enabled");
+	(args == "enable") ? botSpeech = true : botSpeech = false;
+        (botSpeech) ? console.log("Engine: Speech Enabled") : console.log("Engine: Speech Disabled");
 });
 
 
