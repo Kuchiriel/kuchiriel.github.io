@@ -20,6 +20,11 @@ var rs = new RiveScript({
     debug:   debugMode
 });
 
+
+rs.setSubroutine('fancyJSObject', function(rs, args){
+	alert("i work");
+});
+
 // Load our files from the brain/ folder.
 rs.loadFile([
     "brain/begin.rive",
@@ -32,10 +37,6 @@ rs.loadFile([
     "brain/test.rive"
     ], on_load_success, on_load_error);
 
-
-rs.setSubroutine('fancyJSObject', function(rs, args){
-	alert("i work");
-});
 
 function on_load_success () {
     // Now to sort the replies!
