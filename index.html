@@ -24,7 +24,8 @@
 
 
 var rs = new RiveScript({
-    debug:   debugMode
+    debug:   debugMode,
+    onDebug: onDebug
 });
 
 // Load our files from the brain/ folder.
@@ -56,7 +57,7 @@ rs.setSubroutine('botSpeech', function(rs, args){
 
 
 function sendMessage (text) {
-  
+
     try {
     var reply = rs.reply("Trevor", text);
     console.log("Samaritan: "+reply);
@@ -94,11 +95,7 @@ function sendMessage (text) {
           }
         }
         </script>
-        <script>
-        
-       	
-        </script>
-        
+
     </head>
     <body>
 
