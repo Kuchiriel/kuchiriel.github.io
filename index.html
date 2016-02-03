@@ -30,10 +30,7 @@ var rs = new RiveScript({
     debug:   debugMode
 });
 
-rs.setSubroutine('Speech', function(rs, args){
-	console.log(args)
-	botSpeech = false
-});
+
 
 
 // Load our files from the brain/ folder.
@@ -53,10 +50,16 @@ rs.loadFile([
 function on_load_success () {
     // Now to sort the replies!
     rs.sortReplies();
-    console.log("replies sorted");
+    console.log("Engine: Replies sorted");
+    
+    rs.setSubroutine('Speech', function(rs, args){
+	console.log("Engine: " + args)
+	botSpeech = false
+});
+    
 }
 function on_load_error (err) {
-    console.log("Loading error: " + err);
+    console.log("Engine: Loading error: " + err);
 }
 
 
@@ -67,7 +70,8 @@ function sendMessage (text) {
     success.play();
     } catch(e) {
         window.alert(e.message + "\n" + e.line);
-        console.log(e);
+        console.log("Engine: " + e);
+        executeSamaritan(e.message);
         error.play();
     }
     return reply;
@@ -79,7 +83,7 @@ function sendMessage (text) {
         window.onload = function(){
           if (annyang) {
             annyang.setLanguage('en-US');
-            console.log("script loaded");
+            console.log("Engine: Speech Recognition script loaded");
             var commands = {
               'samaritan *something': function(something) {
                console.log("You: " + something);
