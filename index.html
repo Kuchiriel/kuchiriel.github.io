@@ -39,6 +39,9 @@ rs.loadFile([
     "brain/test.rive"
     ], on_load_success, on_load_error);
 
+rs.setSubroutine('botSpeech', function(rs, args){
+	botSpeech = false;
+});
 
 function on_load_success () {
     // Now to sort the replies!
@@ -49,9 +52,6 @@ function on_load_error (err) {
     console.log("Loading error: " + err);
 }
 
-rs.setSubroutine('fancyJSObject', function(rs, args){
-	alert("i work");
-});
 
 function sendMessage (text) {
   
