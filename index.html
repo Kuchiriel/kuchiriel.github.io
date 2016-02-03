@@ -12,15 +12,19 @@
         <script type="text/javascript" src="samaritan.js"></script>
         <script type="text/javascript" src="datadumper.js"></script>
         <script type="text/javascript" src="rivescript.js"></script>
+        <script src='https://code.responsivevoice.org/responsivevoice.js'></script>
         <link rel="stylesheet" type="text/css" href="style.css">
+        
+        
         <script type="text/javascript">
+      
         var debugMode = false;
         // Create our RiveScript interpreter.
+
+
 var rs = new RiveScript({
     debug:   debugMode
 });
-
-
 
 
 // Load our files from the brain/ folder.
@@ -70,10 +74,12 @@ function sendMessage (text) {
             console.log("script loaded");
             var commands = {
               'samaritan *something': function(something) {
-              var audio = new Audio('robot_bleep.mp3');
+               var audio = new Audio('bleep.mp3');
                audio.play();
-               console.log("You: "+something);
-               executeSamaritan(sendMessage(something));
+               console.log("You: " + something);
+               reply = sendMessage(something);
+               responsiveVoice.speak(reply);
+               executeSamaritan(reply);
                // window.location.href = 'https://kuchiriel.github.io/?msg='+sendMessage(something);
                 
               }
