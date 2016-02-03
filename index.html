@@ -30,10 +30,7 @@ var rs = new RiveScript({
     debug:   debugMode
 });
 
-rs.setSubroutine('Speech', function(rs, args){
-	console.log(args)
-	botSpeech = false
-});
+
 
 
 // Load our files from the brain/ folder.
@@ -47,7 +44,11 @@ rs.loadFile([
     "brain/javascript.rive",
     "brain/test.rive"
     ], on_load_success, on_load_error);
-
+    
+rs.setSubroutine('Speech', function(rs, args){
+	console.log(args)
+	botSpeech = false
+});
 
 function on_load_success () {
     // Now to sort the replies!
@@ -82,6 +83,7 @@ function sendMessage (text) {
             var commands = {
               'samaritan *something': function(something) {
                console.log("You: " + something);
+              
                reply = sendMessage(something);
           
               if(botSpeech){
