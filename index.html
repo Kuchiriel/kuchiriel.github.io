@@ -21,9 +21,7 @@ var rs = new RiveScript({
 });
 
 
-rs.setSubroutine('fancyJSObject', function(rs, args){
-	alert("i work");
-});
+
 
 // Load our files from the brain/ folder.
 rs.loadFile([
@@ -47,6 +45,10 @@ function on_load_error (err) {
     console.log("Loading error: " + err);
 }
 
+rs.setSubroutine('fancyJSObject', function(rs, args){
+	alert("i work");
+});
+
 function sendMessage (text) {
   
     try {
@@ -68,11 +70,12 @@ function sendMessage (text) {
             console.log("script loaded");
             var commands = {
               'samaritan *something': function(something) {
-              // var audio = new Audio('robot_bleep.mp3');
-               // audio.play();
+              var audio = new Audio('robot_bleep.mp3');
+               audio.play();
+               console.log("You: "+something);
                executeSamaritan(sendMessage(something));
                // window.location.href = 'https://kuchiriel.github.io/?msg='+sendMessage(something);
-                console.log("You: "+something);
+                
               }
             };
             annyang.addCommands(commands);
