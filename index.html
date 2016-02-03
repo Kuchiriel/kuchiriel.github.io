@@ -24,8 +24,14 @@
 
 
 var rs = new RiveScript({
-    debug:   debugMode
+    debug:   debugMode;
 });
+
+rs.setSubroutine('Speech', function(rs, args){
+	console.log(args);
+	botSpeech = false;
+});
+
 
 // Load our files from the brain/ folder.
 rs.loadFile([
@@ -48,11 +54,6 @@ function on_load_success () {
 function on_load_error (err) {
     console.log("Loading error: " + err);
 }
-
-rs.setSubroutine('botSpeech', function(rs, args){
-	console.log(args);
-	botSpeech = false;
-});
 
 
 function sendMessage (text) {
