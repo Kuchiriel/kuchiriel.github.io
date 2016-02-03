@@ -27,6 +27,10 @@ var rs = new RiveScript({
     debug:   debugMode
 });
 
+rs.setSubroutine('botSpeech', function(rs, args){
+	console.log(args);
+	botSpeech = false;
+});
 
 // Load our files from the brain/ folder.
 rs.loadFile([
@@ -40,10 +44,6 @@ rs.loadFile([
     "brain/test.rive"
     ], on_load_success, on_load_error);
 
-rs.setSubroutine('botSpeech', function(rs, args){
-	console.log(args);
-	botSpeech = false;
-});
 
 function on_load_success () {
     // Now to sort the replies!
