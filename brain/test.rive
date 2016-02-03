@@ -1,7 +1,13 @@
+! array enable = enable start 
+^ begin|put on|turn on|take in|
+
 ! array disable = disable shutdown 
 ^ stop|put off|turn off|take out|
 
 ! array speech = speech voice vocalization talk talking speak speaking
 
 + [*] (@disable @speech) [*]
-- Disabling Speech <call>disablespeech</call>
+- Disabling Speech <call>disableSpeech</call>
+
++ [*] (@enable @speech) [*]
+- Enabling Speech <call>disableSpeech</call>
