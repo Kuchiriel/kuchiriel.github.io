@@ -802,7 +802,7 @@ JSObjectHandler = (function() {
 
   JSObjectHandler.prototype.load = function(name, code) {
     var e, source;
-    source = "this._objects[\"" + name + "\"] = function(rs, args) {\n" + code.join("\n") + "}\n";
+    source = "this._objects[\"" + name + "\"] = function(rs, args) {\n" + this.code.join("\n") + "}\n";
     try {
       return eval(source);
     } catch (_error) {
