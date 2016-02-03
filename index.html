@@ -20,6 +20,7 @@
       
         var debugMode = false;
         var botSpeech = true;
+        var reply;
         // Create our RiveScript interpreter.
 
 
@@ -59,13 +60,13 @@ rs.setSubroutine('botSpeech', function(rs, args){
 function sendMessage (text) {
 
     try {
-    var reply = rs.reply("Trevor", text);
+    reply = rs.reply("Trevor", text);
     console.log("Samaritan: "+reply);
     } catch(e) {
         window.alert(e.message + "\n" + e.line);
         console.log(e);
     }
-    return reply;
+    return false;
 }
 
         </script>
@@ -80,8 +81,9 @@ function sendMessage (text) {
                var audio = new Audio('bleep.mp3');
                audio.play();
                console.log("You: " + something);
-               reply = sendMessage(something);
-              
+               
+               sendMessage(something);
+               
               if(botSpeech){
                responsiveVoice.speak(reply);
               }
