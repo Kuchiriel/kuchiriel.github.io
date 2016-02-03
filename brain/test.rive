@@ -1,10 +1,10 @@
 + [*] shut up [*]
-- Ok, but no need not be stupid <call>botSpeech false</call>
+- Ok, but no need not be stupid <call>botSpeech</call>
 
 + [*] stop talking [*]
-- Ok, i will stop talking <call>botSpeech false</call>
+- Ok, i will stop talking <call>botSpeech</call>
 
 + [*] disable speech [*]
-- I will disable speech <call>botSpeech false</call>
+- I will disable speech <call>botSpeech</call>
 
 
