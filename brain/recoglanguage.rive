@@ -1,8 +1,13 @@
 ! array set = set change toggle put
 ! array recognition = recognition perception
 ! array language = language voice sound speech idiom
+! array listen = listen hear attend
 
 + [*] @set [@language] @recognition [to|into|for|by] * [*]
+- {topic=recoglanguage}
+^ <@>
+
++ [*] @listen [in|at|into|for|by] * [*]
 - {topic=recoglanguage}
 ^ <@>
 
