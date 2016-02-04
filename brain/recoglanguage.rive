@@ -24,6 +24,7 @@
 ^ {topic=random}
 
 + *
-- {@recognition} <@>
+- {topic=random} 
+^ {@recognition} <@>
 
 < topic
