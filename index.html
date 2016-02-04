@@ -70,6 +70,7 @@ function on_load_error (err) {
 
    rs.setSubroutine('toggleRecogLanguage', function(rs, args){
 	recogLanguage = args;
+	annyang.setLanguage(recogLanguage);
 	console.log("Engine: Recognition Language Set To " + recogLanguage)
 });
 
