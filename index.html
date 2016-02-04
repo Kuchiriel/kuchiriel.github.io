@@ -103,7 +103,11 @@ function sendMessage (text) {
               reply = sendMessage(something);
               if (botSpeech) {
               responsiveVoice.speak(reply, "UK English Male");
+              while (responsiveVoice.isPlaying())
+              {
               executeSamaritan("[speaking]");
+              }
+              	
               }
               else {
               executeSamaritan(reply)
