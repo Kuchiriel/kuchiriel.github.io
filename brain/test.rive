@@ -7,7 +7,7 @@
 ! array speech = speech voice vocalization 
 ^ talk talking speak speaking
 
-+ [*] fox say [*]
++ [*] what [does] [the] fox say [*]
 - Ring-ding-ding-ding-dingeringedin
 
 + [*] @speech * [*]
