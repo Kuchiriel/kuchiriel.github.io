@@ -7,6 +7,9 @@
 ! array speech = speech voice vocalization 
 ^ talk talking speak speaking
 
++ [*] fox say [*]
+- Ring-ding-ding-ding-dingeringedin
+
 + [*] @speech * [*]
 - {topic=togglespeech}
 ^ <@>
