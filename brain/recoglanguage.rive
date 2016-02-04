@@ -1,0 +1,24 @@
+! array set = set change toggle put
+! array recognition = recognition perception
+! array language = language voice sound speech idiom
+
++ [*] @set [@language] @recognition [to|into|for|by] * [*]
+- {topic=recoglanguage}
+^ <@>
+
+> topic recoglanguage
+
++ [english|american]
+- Listening in English
+^ <call>toggleRecogLanguage en-US</call>
+^ {topic=random}
+
++ [portuguese|brazilian]
+- Listening in Portuguese
+^ <call>toggleRecogLanguage pt-BR</call>
+^ {topic=random}
+
++ *
+- {@recognition} <@>
+
+< topic
