@@ -8,14 +8,14 @@
 ^ talk talking speak speaking
 
 + [*] @speech * [*]
-- {topic=toggleSpeech}
+- {topic=togglespeech}
 ^ <@>
 
 + [*] * @speech [*]
-- {topic=toggleSpeech}
+- {topic=togglespeech}
 ^ <@>
 
-> topic toggleSpeech
+> topic togglespeech
 
 + @enable
 - Enabling Speech
