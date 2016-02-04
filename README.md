@@ -48,7 +48,7 @@ We will distribute each part of the project working out of the box independently
 
 We will try to glue things using some "as server approach".
 
-This document is specific to the Web Version of K.I.A we will serve assistant as agents, each with its own personality. Now we are working on an agent named Samaritan, based in the A.I Samaratian of the Person of Interest series. If you want to know the currently available commands see (this document)[https://github.com/Kuchiriel/kuchiriel.github.io/blob/master/COMMANDS.md].
+This document is specific to the Web Version of K.I.A we will serve assistant as agents, each with its own personality. Now we are working on an agent named Samaritan, based in the A.I Samaratian of the Person of Interest series. If you want to know the currently available commands see [this document](https://github.com/Kuchiriel/kuchiriel.github.io/blob/master/COMMANDS.md).
 
 
 
