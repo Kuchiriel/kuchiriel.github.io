@@ -4,16 +4,30 @@
 ! array disable = disable shutdown 
 ^ stop|put off|turn off|take out|
 
-! array speech = speech voice vocalization talk talking speak speaking
+! array speech = speech voice vocalization 
+^ talk talking speak speaking
 
-+ [*] @disable [@speech] [*]
-- Disabling Speech <call>toggleSpeech disable</call>
++ [*] @speech * [*]
+- {topic=toggleSpeech}
+^ <@>
 
-+ [*] @enable [@speech] [*]
-- Enabling Speech <call>toggleSpeech enable</call>
++ [*] * @speech [*]
+- {topic=toggleSpeech}
+^ <@>
 
-+ [*] [@speech] @disable [*]
-- Disabling Speech <call>toggleSpeech disable</call>
+> topic toggleSpeech
 
-+ [*] [@speech] @enable [*]
-- Enabling Speech <call>toggleSpeech enable</call>
++ @enable
+- Enabling Speech
+^ <call>toggleSpeech enable</call>
+^ {topic=random}
+
++ @disable
+- Disabling Speech
+^ <call>toggleSpeech disable</call>
+^ {topic=random}
+
++ *
+- {@speech} <@>
+
+< topic
