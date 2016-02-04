@@ -25,6 +25,7 @@
       
         var debugMode = false;
         var botSpeech = true;
+        var recogLanguage = "en-US";
         var success = new Audio('bleep.mp3');
         var error = new Audio('error.mp3');     
                
@@ -34,8 +35,6 @@
 var rs = new RiveScript({
     debug:   debugMode
 });
-
-
 
 
 // Load our files from the brain/ folder.
@@ -55,7 +54,7 @@ rs.loadFile([
 function on_load_success () {
     // Now to sort the replies!
     rs.sortReplies();
-    console.log("Engine: Replies Sorted.");
+    console.log("Engine: Replies Sorted");
 }
 function on_load_error (err) {
     console.log("Engine: Loading error: " + err);
@@ -65,6 +64,11 @@ function on_load_error (err) {
     rs.setSubroutine('toggleSpeech', function(rs, args){
 	(args == "enable") ? botSpeech = true : botSpeech = false;
         (botSpeech) ? console.log("Engine: Speech Enabled") : console.log("Engine: Speech Disabled");
+});
+
+   rs.setSubroutine('toggleRecogLanguage', function(rs, args){
+	recogLanguage = args;
+	console.log("Engine: Recognition Language Set To " + args)
 });
 
 
@@ -88,7 +92,7 @@ function sendMessage (text) {
         <script>
         window.onload = function(){
           if (annyang) {
-            annyang.setLanguage('en-US');
+            annyang.setLanguage(recogLanguage);
             console.log("Engine: Loaded Speech Recognition");
             var commands = {
               'samaritan *something': function(something) {
