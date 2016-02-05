@@ -112,7 +112,9 @@ function receiveMsg(something)
             console.log("Engine: Loaded Speech Recognition");
             var commands = { 'samaritan *something': recogFunction };
             var commands = { '*something samaritan': recogFunction };
-            alert(recogFunction);
+            recogFunction(something){
+            alert(something);
+            }
             annyang.addCommands(commands);
             annyang.start();
           }
