@@ -112,11 +112,20 @@ function receiveMsg(something)
             console.log("Engine: Loaded Speech Recognition");
             var commands = { 'samaritan *something': recogFunction };
             var commands2 = { '*something samaritan': recogFunction };
+            var commands3 = { 'samaritan': tempRec };
             function recogFunction(something){
-            alert(something);
+            receiveMsg(something);
+            }
+            function tempRec(something) {
+            receiveMsg(something);
+            annyang.addCommand('*something': function(something){
+            receivemsg(something);
+            annyang.removeCommands('*something');
+            });
             }
             annyang.addCommands(commands);
             annyang.addCommands(commands2);
+            annyang.addCommands(commands3);
             annyang.start();
           }
         }
