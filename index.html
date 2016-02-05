@@ -122,8 +122,8 @@ function receiveMsg(something)
             annyang.addCommands(tempcommand);
             }
             function tempSend(something) {
-            	 receiveMsg(something);
             	 annyang.removeCommands(tempcommand);
+            	 receiveMsg(something);
             }
             annyang.addCommands(commands);
             annyang.addCommands(commands2);
