@@ -89,16 +89,8 @@ function sendMessage (text) {
     return reply;
 }
 
-
-        </script>
-
-        <script>
-        window.onload = function(){
-          if (annyang) {
-            annyang.setLanguage(recogLanguage);
-            console.log("Engine: Loaded Speech Recognition");
-            var commands = {
-              'samaritan *something': function(something) {
+function receiveMsg(something)
+{
               console.log("You: " + something);
               reply = sendMessage(something);
               if (botSpeech) {
@@ -109,6 +101,18 @@ function sendMessage (text) {
               else {
               executeSamaritan(reply)
               }
+}
+
+        </script>
+
+        <script>
+        window.onload = function(){
+          if (annyang) {
+            annyang.setLanguage(recogLanguage);
+            console.log("Engine: Loaded Speech Recognition");
+            var commands = {
+              'samaritan *something': function(something), '*something samaritan': function(something) {
+              alert(something);
               }
             };
             annyang.addCommands(commands);
