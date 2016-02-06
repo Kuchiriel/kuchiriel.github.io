@@ -158,13 +158,13 @@
                 }
 
                 function tempRec() {
+                    annyang.removeCommands();
                     receiveMsg("Samaritan");
                     annyang.addCommands(tempCommand);
                 }
 
                 function tempSend(something) {
                     receiveMsg(something);
-                    annyang.removeCommands();
                     addCommandsBack();
                 }
 
