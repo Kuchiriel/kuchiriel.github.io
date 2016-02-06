@@ -6,165 +6,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="awesome-bootstrap-checkbox.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
+   
+    <!-- Samaritan Interface --> 
+    <link rel="stylesheet" type="text/css" href="samaritan.css">
     <link rel="icon" sizes="192x192" href="img/icon.png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.2.1/annyang.min.js"></script>
-    <script type="text/javascript" src="jquery-1.12.0.min.js"></script>
     <script type="text/javascript" src="screenfull.min.js"></script>
-    <script type="text/javascript" src="samaritan.js"></script>
+    <script type="text/javascript" src="samaritanui.js"></script>
+    
+    <!-- Speech Recognition -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.2.1/annyang.min.js"></script>
+    
+    <!-- Natural Language Processor -->
     <script type="text/javascript" src="datadumper.js"></script>
     <script type="text/javascript" src="rivescript.js"></script>
+    
+    <!-- Text to Speech -->
     <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
-    <script>
-        var botName = "Samaritan"
-        var debugMode = false;
-        var botSpeech = true;
-        var recogLanguage = "en-US";
-        var success = new Audio('bleep.mp3');
-        var error = new Audio('error.mp3');
-        // Create our RiveScript interpreter.
-        var rs = new RiveScript({
-            debug: debugMode
-        });
-        // Load our files from the brain/ folder.
-        rs.loadFile([
-            "brain/begin.rive",
-            "brain/admin.rive",
-            "brain/clients.rive",
-            "brain/samaritan.rive",
-            "brain/myself.rive",
-            "brain/rpg.rive",
-            "brain/javascript.rive",
-            "brain/eastereggs.rive",
-            "brain/recoglanguage.rive",
-            "brain/test.rive"
-        ], on_load_success, on_load_error);
-
-        function on_load_success() {
-            // Now to sort the replies!
-            rs.sortReplies();
-            console.log("Engine: Replies Sorted");
-        }
-
-        function on_load_error(err) {
-            console.log("Engine: Loading error: " + err);
-        }
-        rs.setSubroutine('toggleSpeech', function(rs, args) {
-            (args == "enable") ? botSpeech = true: botSpeech = false;
-            (botSpeech) ? console.log("Engine: Speech Enabled"): console.log("Engine: Speech Disabled");
-        });
-        rs.setSubroutine('toggleRecogLanguage', function(rs, args) {
-            recogLanguage = args;
-            annyang.setLanguage(recogLanguage);
-            console.log("Engine: Recognition Language Set To " + recogLanguage)
-        });
-
-        
-
-                var botCommand = {
-                    '(hey) Kia *something': recogFunction
-                };
-                var commandBot = {
-                    '(hey) *something Kia': recogFunction
-                };
-                var commandToggle = {
-                    '(hey) Kia (hey)': tempRec
-                };
-                var tempCommand = {
-                    '*something': tempSend
-                };
-                var consoleDebug = {
-                    '*debug': function(debug) {
-                        console.log("Debug: " + debug);
-                    }
-                };
-
-               function recogFunction(something) {
-                    receiveReply(something);
-                }
-
-                function tempRec() {
-                    annyang.removeCommands();
-                    receiveReply("Samaritan");
-                    annyang.addCommands(tempCommand);
-                }
-
-                function tempSend(something) {
-                    annyang.removeCommands();
-                    receiveReply(something);
-                }
-
-                function addCommandsBack() {
-                    annyang.addCommands(botCommand);
-                    annyang.addCommands(commandBot);
-                    annyang.addCommands(commandToggle);
-                    annyang.addCommands(consoleDebug);
-                }
-
-                function voiceStartCallback() {
-                     annyang.removeCommands();
-                     console.log("Started");
-                }
-
-                function voiceEndCallback() {
-                    addCommandsBack();
-                    console.log("Ended");
-                }
-                
-                var rvParameters = {
-                    onstart: voiceStartCallback,
-                    onend: voiceEndCallback
-                }
-        function sendMessage(something) {
-            try {
-                var reply = rs.reply("Trevor", something);
-                console.log("Samaritan: " + reply);
-                success.play();
-            } catch (e) {
-                window.alert(e.message + "\n" + e.line);
-                console.log("Engine: " + e);
-                executeSamaritan(e.message);
-                error.play();
-            }
-            return reply;
-        }        
-        function showReply(reply) {
-            if (botSpeech && responsiveVoice.voiceSupport()) {
-                executeSamaritan("[speaking]");
-                responsiveVoice.speak(reply, "UK English Male", rvParameters);
-            } 
-            else {
-                executeSamaritan(reply)
-            }
-        }        
-        function receiveReply(something) {
-            console.log("You: " + something);
-            reply = sendMessage(something);
-            showReply(reply);
-        }
-    </script>
-    <script>
-        window.onload = function() {
-            if (annyang) {
-                
-                /*
-                var bC = '(hey) ' + botName + ' *something';
-                var cB = "(hey) *something " + botName;
-                var cT = "(hey) " + botName + " (hey)";
-                */
-                
-                annyang.setLanguage(recogLanguage);
-                console.log("Engine: Loaded Speech Recognition");
-                addCommandsBack();
-                annyang.start({
-                    autoRestart: true
-                });
-            }
-        }
-    </script>
+    
+    <!-- Core Scripts -->
+    <script type="text/javascript" src="corescript.js"></script>
+    <script type="text/javascript" src="routines.js"></script>
+    
+    <!-- Others -->
+    <script type="text/javascript" src="jquery-1.12.0.min.js"></script>
 </head>
 
 <body>
@@ -175,15 +39,19 @@
     <div id="marker">
         <span id="triangle">&#9650</span>
     </div>
-    <div class="checkbox checkbox-danger">
-        <input id="checkbox6" type="checkbox" checked>
-    </div>
 </body>
 
 </html>
 
-<script>
-    // Further implements
+<!--
+    // Further Implements - Script
+    
+                /*
+                var bC = '(hey) ' + botName + ' *something';
+                var cB = "(hey) *something " + botName;
+                var cT = "(hey) " + botName + " (hey)";
+                */
+    
                  /* 
                     var shutup = {
                         '* shut up *': shutUp
@@ -208,4 +76,14 @@
                         responsiveVoice.pause();
                     }
                 */
-</script>
+-->
+
+<!--
+    Further Implements - HTML
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="awesome-bootstrap-checkbox.css">
+    
+     <div class="checkbox checkbox-danger">
+        <input id="checkbox6" type="checkbox" checked>
+    </div>
+-->
