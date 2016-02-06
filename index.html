@@ -118,10 +118,12 @@
 
                 function voiceStartCallback() {
                      annyang.removeCommands();
+                     console.log("Started");
                 }
 
                 function voiceEndCallback() {
                     addCommandsBack();
+                    console.log("Ended");
                 }
                 
                 var rvParameters = {
