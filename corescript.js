@@ -70,7 +70,7 @@
                 }
 
             function voiceEndCallback() {
-                addCommandsBack();
+                speech.addCommandsBack();
                 annyang.resume();
                 console.log("Ended");
                 }
