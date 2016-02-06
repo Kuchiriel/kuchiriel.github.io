@@ -19,6 +19,7 @@
     <script type="text/javascript" src="rivescript.js"></script>
     <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
     <script>
+        var botName = "Samaritan"
         var debugMode = false;
         var botSpeech = true;
         var recogLanguage = "en-US";
@@ -85,11 +86,9 @@
                 }
                 executeSamaritan("[speaking]");
                 responsiveVoice.speak(reply, "UK English Male", parameters);
-                
                    function voiceStartCallback() {
-                    console.log("Voice started");
-                    annyang.removeCommands();
-                    var shutup = {
+                    annyang.pause();
+                   /* var shutup = {
                         '* shut up *': shutUp
                     };
                     var shutup = {
@@ -111,11 +110,11 @@
                     function pauseSpeak() {
                         responsiveVoice.pause();
                     }
+                    */
                 }
 
                 function voiceEndCallback() {
-                    console.log("Voice ended");
-                    addCommandsBack();
+                    annyang.resume();
                 }
                 
             } else {
@@ -127,13 +126,13 @@
         window.onload = function() {
             if (annyang) {
                 var commands = {
-                    '(hey) samaritan *something': recogFunction
+                    '(hey)' + botName + '*something': recogFunction
                 };
                 var commands2 = {
-                    '(hey) *something samaritan': recogFunction
+                    '(hey) *something ' + botName: recogFunction
                 };
                 var commands3 = {
-                    '(hey) samaritan (hey)': tempRec
+                    '(hey)'+ botName + '(hey)': tempRec
                 };
                 var tempcommand = {
                     '*something': tempSend
