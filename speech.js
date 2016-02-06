@@ -1,5 +1,5 @@
 
-   window.onload = function() {
+
             if (annyang) {
 
                annyang.setLanguage(recogLanguage);
@@ -48,7 +48,7 @@
                     autoRestart: true
                 });
             }
-        }
+        
         
            function addCommandsBack() {
                     annyang.addCommands(botCommand);
