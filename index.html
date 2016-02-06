@@ -128,12 +128,17 @@ function receiveMsg(something)
             function tempSend(something) {
             	 annyang.pause();
             	 receiveMsg(something);
-            	 annyang.removeCommands(tempcommand);
+            	 annyang.removeCommands();
+            	 addCommands();
             	 annyang.resume();
             }
+         
+         function addCommands()
+         {
             annyang.addCommands(commands);
             annyang.addCommands(commands2);
-            annyang.addCommands(commands3);
+            annyang.addCommands(commands3);	
+         }
             
             annyang.start({ autoRestart: false });
           }
