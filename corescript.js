@@ -62,14 +62,10 @@
         function showReply(reply) {
             
             function voiceStartCallback() {
-                annyang.pause();
-                annyang.removeCommands();
                 console.log("Started");
                 }
 
             function voiceEndCallback() {
-                annyang.resume();
-                addCommandsBack();
                 console.log("Ended");
                 }
                 
