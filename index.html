@@ -94,8 +94,10 @@ function receiveMsg(something)
               console.log("You: " + something);
               reply = sendMessage(something);
               if (botSpeech) {
+              annyang.pause();
               executeSamaritan("[speaking]");
               responsiveVoice.speak(reply, "UK English Male");
+              annyang.resume();
               }
               else {
               executeSamaritan(reply)
@@ -107,43 +109,37 @@ function receiveMsg(something)
         <script>
         window.onload = function(){
           if (annyang) {
-            annyang.setLanguage(recogLanguage);
-            console.log("Engine: Loaded Speech Recognition");
             var commands = { '(hey) samaritan *something': recogFunction };
             var commands2 = { '(hey) *something samaritan': recogFunction };
             var commands3 = { '(hey) samaritan (hey)': tempRec };
             var tempcommand = {'*something': tempSend };
             var debug = { '*debug': function(debug){console.log("You: " + debug);} };
             
+            annyang.setLanguage(recogLanguage);
+            console.log("Engine: Loaded Speech Recognition");
             addCommands();
-            
+        
             function recogFunction(something){
-            annyang.pause();
             receiveMsg(something);
-            annyang.resume();
             }
             function tempRec() {
-            annyang.pause();
-            receiveMsg("samaritan");
-            annyang.resume();
+            receiveMsg("Samaritan");
             annyang.addCommands(tempcommand);
             }
             function tempSend(something) {
-            	 annyang.pause();
-            	 receiveMsg(something);
+            	 receiveMsg(something);	
             	 annyang.removeCommands();
             	 addCommands();
-            	 annyang.resume();
             }
          
          function addCommands()
          {
             annyang.addCommands(commands);
             annyang.addCommands(commands2);
-            annyang.addCommands(commands3);	
+            annyang.addCommands(commands3);
+            annyang.addCommands(debug);
          }
-            
-            annyang.start({ autoRestart: false });
+            annyang.start({ autoRestart: true });
           }
         }
         </script>
