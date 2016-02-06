@@ -32,14 +32,7 @@
             console.log("Engine: Loading error: " + err);
         }
           
-      
-             function addCommandsBack() {
-                    annyang.addCommands(botCommand);
-                    annyang.addCommands(commandBot);
-                    annyang.addCommands(commandToggle);
-                    annyang.addCommands(consoleDebug);
-                } 
-                
+
         function sendMessage(something) {
             try {
                 var reply = rs.reply("Trevor", something);
