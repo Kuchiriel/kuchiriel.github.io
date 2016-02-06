@@ -45,7 +45,7 @@
             console.log("Engine: Loaded Speech Recognition");
         
                 annyang.start({
-                    autoRestart: true
+                    autoRestart: false
                 });
             }
         
