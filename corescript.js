@@ -38,55 +38,8 @@
         var success = new Audio('bleep.mp3');
         var error = new Audio('error.mp3');
         
-        function setShits() {
-            
-                annyang.setLanguage(recogLanguage);
-                addCommandsBack();
-                
-                var botCommand = {
-                    '(hey) Kia *something': recogFunction
-                };
-                var commandBot = {
-                    '(hey) *something Kia': recogFunction
-                };
-                var commandToggle = {
-                    '(hey) Kia (hey)': tempRec
-                };
-                var tempCommand = {
-                    '*something': tempSend
-                };
-                var consoleDebug = {
-                    '*debug': function(debug) {
-                        console.log("Debug: " + debug);
-                    }
-                };
-            
-
-                function recogFunction(something) {
-                    receiveReply(something);
-                }
-
-                function tempRec() {
-                    annyang.removeCommands();
-                    receiveReply("Samaritan");
-                    annyang.addCommands(tempCommand);
-                }
-
-                function tempSend(something) {
-                    annyang.removeCommands();
-                    receiveReply(something);
-                }
-
-                function addCommandsBack() {
-                    annyang.addCommands(botCommand);
-                    annyang.addCommands(commandBot);
-                    annyang.addCommands(commandToggle);
-                    annyang.addCommands(consoleDebug);
-                }           
-
-            
-            console.log("Engine: Loaded Speech Recognition");
-        }
+        
+ 
                 
 
                 
@@ -135,6 +88,61 @@
             reply = sendMessage(something);
             showReply(reply);
         }
+        
+        
+        
+        
+               function setShits() {
+            
+                annyang.setLanguage(recogLanguage);
+                addCommandsBack();
+                
+                var botCommand = {
+                    '(hey) Kia *something': recogFunction
+                };
+                var commandBot = {
+                    '(hey) *something Kia': recogFunction
+                };
+                var commandToggle = {
+                    '(hey) Kia (hey)': tempRec
+                };
+                var tempCommand = {
+                    '*something': tempSend
+                };
+                var consoleDebug = {
+                    '*debug': function(debug) {
+                        console.log("Debug: " + debug);
+                    }
+                };
+            
+
+                function recogFunction(something) {
+                    receiveReply(something);
+                }
+
+                function tempRec() {
+                    annyang.removeCommands();
+                    receiveReply("Samaritan");
+                    annyang.addCommands(tempCommand);
+                }
+
+                function tempSend(something) {
+                    annyang.removeCommands();
+                    receiveReply(something);
+                }
+
+                function addCommandsBack() {
+                    annyang.addCommands(botCommand);
+                    annyang.addCommands(commandBot);
+                    annyang.addCommands(commandToggle);
+                    annyang.addCommands(consoleDebug);
+                }           
+
+            
+            console.log("Engine: Loaded Speech Recognition");
+        }
+        
+        
         
          window.onload = function() {
             if (annyang) {
