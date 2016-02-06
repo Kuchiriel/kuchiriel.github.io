@@ -62,19 +62,7 @@
             console.log("Engine: Recognition Language Set To " + recogLanguage)
         });
 
-        function sendMessage(text) {
-            try {
-                var reply = rs.reply("Trevor", text);
-                console.log("Samaritan: " + reply);
-                success.play();
-            } catch (e) {
-                window.alert(e.message + "\n" + e.line);
-                console.log("Engine: " + e);
-                executeSamaritan(e.message);
-                error.play();
-            }
-            return reply;
-        }
+        
 
                 var botCommand = {
                     '(hey) Kia *something': recogFunction
@@ -95,18 +83,18 @@
                 };
 
                function recogFunction(something) {
-                    receiveMsg(something);
+                    receiveReply(something);
                 }
 
                 function tempRec() {
                     annyang.removeCommands();
-                    receiveMsg("Samaritan");
+                    receiveReply("Samaritan");
                     annyang.addCommands(tempCommand);
                 }
 
                 function tempSend(something) {
                     annyang.removeCommands();
-                    receiveMsg(something);
+                    receiveReply(something);
                 }
 
                 function addCommandsBack() {
@@ -130,10 +118,20 @@
                     onstart: voiceStartCallback,
                     onend: voiceEndCallback
                 }
-                
-        function receiveMsg(something) {
-            console.log("You: " + something);
-            reply = sendMessage(something);
+        function sendMessage(something) {
+            try {
+                var reply = rs.reply("Trevor", something);
+                console.log("Samaritan: " + reply);
+                success.play();
+            } catch (e) {
+                window.alert(e.message + "\n" + e.line);
+                console.log("Engine: " + e);
+                executeSamaritan(e.message);
+                error.play();
+            }
+            return reply;
+        }        
+        function showReply(reply) {
             if (botSpeech && responsiveVoice.voiceSupport()) {
                 executeSamaritan("[speaking]");
                 responsiveVoice.speak(reply, "UK English Male", rvParameters);
@@ -141,6 +139,11 @@
             else {
                 executeSamaritan(reply)
             }
+        }        
+        function receiveReply(something) {
+            console.log("You: " + something);
+            reply = sendMessage(something);
+            showReply(reply);
         }
     </script>
     <script>
