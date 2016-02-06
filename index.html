@@ -126,19 +126,20 @@
         window.onload = function() {
             if (annyang) {
                 
-                var defaultCommand = "(hey) " + botName + "*something";
-                var defaultCommand = "(hey) " + botName + "*something";
+                var bC = "(hey) " + botName + " *something";
+                var cB = "(hey) *something " + botName;
+                var cT = "(hey) " + botName + " (hey)";
                 
                 var botCommand = {
-                    defaultCommand: recogFunction
+                    bC: recogFunction
                 };
                 var commandBot = {
-                    '(hey) *something 'botName: recogFunction
+                    cB: recogFunction
                 };
                 var commandToggle = {
-                    '(hey) 'botName' (hey)': tempRec
+                    cT: tempRec
                 };
-                var tempcommand = {
+                var tempCommand = {
                     '*something': tempSend
                 };
                 var consoleDebug = {
@@ -156,7 +157,7 @@
 
                 function tempRec() {
                     receiveMsg("Samaritan");
-                    annyang.addCommands(tempcommand);
+                    annyang.addCommands(tempCommand);
                 }
 
                 function tempSend(something) {
