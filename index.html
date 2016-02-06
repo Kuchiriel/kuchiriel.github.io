@@ -94,6 +94,21 @@
                     }
                 };
 
+               function recogFunction(something) {
+                    receiveMsg(something);
+                }
+
+                function tempRec() {
+                    annyang.removeCommands();
+                    receiveMsg("Samaritan");
+                    annyang.addCommands(tempCommand);
+                }
+
+                function tempSend(something) {
+                    annyang.removeCommands();
+                    receiveMsg(something);
+                }
+
                 function addCommandsBack() {
                     annyang.addCommands(botCommand);
                     annyang.addCommands(commandBot);
@@ -139,22 +154,6 @@
                 annyang.setLanguage(recogLanguage);
                 console.log("Engine: Loaded Speech Recognition");
                 addCommandsBack();
-
-                function recogFunction(something) {
-                    receiveMsg(something);
-                }
-
-                function tempRec() {
-                    annyang.removeCommands();
-                    receiveMsg("Samaritan");
-                    annyang.addCommands(tempCommand);
-                }
-
-                function tempSend(something) {
-                    annyang.removeCommands();
-                    receiveMsg(something);
-                }
-
                 annyang.start({
                     autoRestart: true
                 });
