@@ -8,7 +8,7 @@
 
                annyang.setLanguage(recogLanguage);
                
-                addCommandsBack();
+                
                 
                 var botCommand = {
                     '(hey) Kia *something': recogFunction
@@ -51,7 +51,7 @@
                     annyang.addCommands(consoleDebug);
                 }           
 
-            
+            addCommandsBack();
             console.log("Engine: Loaded Speech Recognition");
         
                 annyang.start({
