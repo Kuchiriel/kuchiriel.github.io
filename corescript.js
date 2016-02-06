@@ -55,7 +55,7 @@
         
         
         
-          var botName = sendMessage("getbotname")
+         // var botName = sendMessage("getbotname")
         var debugMode = false;
         var botSpeech = true;
         var recogLanguage = "en-US";
