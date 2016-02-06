@@ -127,20 +127,21 @@
             if (annyang) {
                 
                 var defaultCommand = "(hey) " + botName + "*something";
+                var defaultCommand = "(hey) " + botName + "*something";
                 
-                var commands = {
+                var botCommand = {
                     defaultCommand: recogFunction
                 };
-                var commands2 = {
+                var commandBot = {
                     '(hey) *something 'botName: recogFunction
                 };
-                var commands3 = {
+                var commandToggle = {
                     '(hey) 'botName' (hey)': tempRec
                 };
                 var tempcommand = {
                     '*something': tempSend
                 };
-                var debug = {
+                var consoleDebug = {
                     '*debug': function(debug) {
                         console.log("You: " + debug);
                     }
@@ -165,10 +166,10 @@
                 }
 
                 function addCommandsBack() {
-                    annyang.addCommands(commands);
-                    annyang.addCommands(commands2);
-                    annyang.addCommands(commands3);
-                    annyang.addCommands(debug);
+                    annyang.addCommands(botCommand);
+                    annyang.addCommands(commandBot);
+                    annyang.addCommands(botToggle);
+                    annyang.addCommands(consoleDebug);
                 }
                 annyang.start({
                     autoRestart: true
