@@ -76,48 +76,27 @@
             return reply;
         }
 
-        function receiveMsg(something) {
-            console.log("You: " + something);
-            reply = sendMessage(something);
-            if (botSpeech && responsiveVoice.voiceSupport()) {
-                var parameters = {
-                    onstart: voiceStartCallback,
-                    onend: voiceEndCallback
-                }
-                executeSamaritan("[speaking]");
-                responsiveVoice.speak(reply, "UK English Male", parameters);
-                   function voiceStartCallback() {
+                function voiceStartCallback() {
                     annyang.pause();
-                   /* var shutup = {
-                        '* shut up *': shutUp
-                    };
-                    var shutup = {
-                        '* resume (speak) *': resumeSpeak
-                    };
-                    var pause = {
-                        '* pause (speak) *': pauseSpeak
-                    };
-                    annyang.addCommands(shutup);
-
-                    function shutUp() {
-                        responsiveVoice.cancel();
-                    }
-
-                    function resumeSpeak() {
-                        responsiveVoice.resume();
-                    }
-
-                    function pauseSpeak() {
-                        responsiveVoice.pause();
-                    }
-                    */
                 }
 
                 function voiceEndCallback() {
                     annyang.resume();
                 }
                 
-            } else {
+                var rvParameters = {
+                    onstart: voiceStartCallback,
+                    onend: voiceEndCallback
+                }
+                
+        function receiveMsg(something) {
+            console.log("You: " + something);
+            reply = sendMessage(something);
+            if (botSpeech && responsiveVoice.voiceSupport()) {
+                executeSamaritan("[speaking]");
+                responsiveVoice.speak(reply, "UK English Male", rvParameters);
+            } 
+            else {
                 executeSamaritan(reply)
             }
         }
@@ -197,3 +176,31 @@
 </body>
 
 </html>
+
+<script>
+    // Further implements
+                 /* 
+                    var shutup = {
+                        '* shut up *': shutUp
+                    };
+                    var shutup = {
+                        '* resume (speak) *': resumeSpeak
+                    };
+                    var pause = {
+                        '* pause (speak) *': pauseSpeak
+                    };
+                    annyang.addCommands(shutup);
+
+                    function shutUp() {
+                        responsiveVoice.cancel();
+                    }
+
+                    function resumeSpeak() {
+                        responsiveVoice.resume();
+                    }
+
+                    function pauseSpeak() {
+                        responsiveVoice.pause();
+                    }
+                */
+</script>
