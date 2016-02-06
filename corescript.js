@@ -1,11 +1,6 @@
         // Set Global Configurations
 
-        var botName = sendMessage("getbotname")
-        var debugMode = false;
-        var botSpeech = true;
-        var recogLanguage = "en-US";
-        var success = new Audio('bleep.mp3');
-        var error = new Audio('error.mp3');
+       
 
         // Create our RiveScript interpreter.
         var rs = new RiveScript({
@@ -36,7 +31,13 @@
             console.log("Engine: Loading error: " + err);
         }
           
-
+        var botName = sendMessage("getbotname")
+        var debugMode = false;
+        var botSpeech = true;
+        var recogLanguage = "en-US";
+        var success = new Audio('bleep.mp3');
+        var error = new Audio('error.mp3');
+        
         function setShits() {
             
                 annyang.setLanguage(recogLanguage);
