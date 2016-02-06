@@ -109,9 +109,9 @@ function receiveMsg(something)
           if (annyang) {
             annyang.setLanguage(recogLanguage);
             console.log("Engine: Loaded Speech Recognition");
-            var commands = { 'samaritan *something': recogFunction };
-            var commands2 = { '*something samaritan': recogFunction };
-            var commands3 = { 'samaritan': tempRec };
+            var commands = { '(hey) samaritan *something': recogFunction };
+            var commands2 = { '(hey) *something samaritan': recogFunction };
+            var commands3 = { '(hey) samaritan (hey)': tempRec };
             var tempcommand = {'*something': tempSend };
             
             addCommands();
