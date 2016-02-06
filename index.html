@@ -79,7 +79,14 @@
             console.log("You: " + something);
             reply = sendMessage(something);
             if (botSpeech && responsiveVoice.voiceSupport()) {
-                function voiceStartCallback() {
+                var parameters = {
+                    onstart: voiceStartCallback,
+                    onend: voiceEndCallback
+                }
+                executeSamaritan("[speaking]");
+                responsiveVoice.speak(reply, "UK English Male", parameters);
+                
+                   function voiceStartCallback() {
                     console.log("Voice started");
                     annyang.removeCommands();
                     var shutup = {
@@ -110,12 +117,7 @@
                     console.log("Voice ended");
                     addCommandsBack();
                 }
-                var parameters = {
-                    onstart: voiceStartCallback,
-                    onend: voiceEndCallback
-                }
-                executeSamaritan("[speaking]");
-                responsiveVoice.speak(reply, "UK English Male", parameters);
+                
             } else {
                 executeSamaritan(reply)
             }
