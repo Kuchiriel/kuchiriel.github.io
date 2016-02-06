@@ -76,12 +76,21 @@
             return reply;
         }
 
+
+
+                function addCommandsBack() {
+                    annyang.addCommands(botCommand);
+                    annyang.addCommands(commandBot);
+                    annyang.addCommands(commandToggle);
+                    annyang.addCommands(consoleDebug);
+                }
+
                 function voiceStartCallback() {
-                    annyang.pause();
+                     annyang.removeCommands();
                 }
 
                 function voiceEndCallback() {
-                    annyang.resume();
+                    addCommandsBack();
                 }
                 
                 var rvParameters = {
@@ -128,6 +137,7 @@
                         console.log("Debug: " + debug);
                     }
                 };
+                
                 annyang.setLanguage(recogLanguage);
                 console.log("Engine: Loaded Speech Recognition");
                 addCommandsBack();
@@ -144,18 +154,9 @@
 
                 function tempSend(something) {
                     annyang.removeCommands();
-                    annyang.pause();
                     receiveMsg(something);
-                    addCommandsBack();
-                    annyang.resume();
                 }
 
-                function addCommandsBack() {
-                    annyang.addCommands(botCommand);
-                    annyang.addCommands(commandBot);
-                    annyang.addCommands(commandToggle);
-                    annyang.addCommands(consoleDebug);
-                }
                 annyang.start({
                     autoRestart: true
                 });
