@@ -96,10 +96,10 @@ function receiveMsg(something)
               reply = sendMessage(something);
               if (botSpeech) {
    
-              executeSamaritan("[speaking]");
-              if(responsiveVoice.voiceSupport()) {
-              responsiveVoice.speak(reply, "UK English Male", {onstart: annyang.pause();, onend: annyang.resume();}););
-              }
+                 executeSamaritan("[speaking]");
+                 if(responsiveVoice.voiceSupport()) {
+                 responsiveVoice.speak(reply, "UK English Male", {onstart: annyang.pause(), onend: annyang.resume()});
+                 }
               }
               else {
               executeSamaritan(reply)
