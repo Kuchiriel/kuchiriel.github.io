@@ -96,7 +96,6 @@ function receiveMsg(something)
               if (botSpeech) {
               executeSamaritan("[speaking]");
               responsiveVoice.speak(reply, "UK English Male");
-             
               }
               else {
               executeSamaritan(reply)
@@ -114,6 +113,9 @@ function receiveMsg(something)
             var commands2 = { '*something samaritan': recogFunction };
             var commands3 = { 'samaritan': tempRec };
             var tempcommand = {'*something': tempSend };
+            
+            addCommands();
+            
             function recogFunction(something){
             annyang.pause();
             receiveMsg(something);
