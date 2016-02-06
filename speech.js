@@ -1,9 +1,5 @@
 
-            
-           
-        
-        
-    window.onload = function() {
+   window.onload = function() {
             if (annyang) {
 
                annyang.setLanguage(recogLanguage);
@@ -45,15 +41,6 @@
                 }
                 
                 
-                     
-             function addCommandsBack() {
-                    annyang.addCommands(botCommand);
-                    annyang.addCommands(commandBot);
-                    annyang.addCommands(commandToggle);
-                    annyang.addCommands(consoleDebug);
-                } 
-                 
-
             addCommandsBack();
             console.log("Engine: Loaded Speech Recognition");
         
@@ -62,3 +49,10 @@
                 });
             }
         }
+        
+           function addCommandsBack() {
+                    annyang.addCommands(botCommand);
+                    annyang.addCommands(commandBot);
+                    annyang.addCommands(commandToggle);
+                    annyang.addCommands(consoleDebug);
+                } 
