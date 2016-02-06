@@ -126,13 +126,13 @@
         window.onload = function() {
             if (annyang) {
                 var commands = {
-                    '(hey)' + botName + '*something': recogFunction
+                    '(hey) 'botName' *something': recogFunction
                 };
                 var commands2 = {
-                    '(hey) *something ' + botName: recogFunction
+                    '(hey) *something 'botName: recogFunction
                 };
                 var commands3 = {
-                    '(hey)'+ botName + '(hey)': tempRec
+                    '(hey) 'botName' (hey)': tempRec
                 };
                 var tempcommand = {
                     '*something': tempSend
