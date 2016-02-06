@@ -42,6 +42,16 @@
                     annyang.removeCommands();
                     receiveReply(something);
                 }
+                
+                
+                     
+             function addCommandsBack() {
+                    annyang.addCommands(botCommand);
+                    annyang.addCommands(commandBot);
+                    annyang.addCommands(commandToggle);
+                    annyang.addCommands(consoleDebug);
+                } 
+                 
 
             addCommandsBack();
             console.log("Engine: Loaded Speech Recognition");
