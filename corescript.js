@@ -33,7 +33,12 @@
         }
           
       
-          
+             function addCommandsBack() {
+                    annyang.addCommands(botCommand);
+                    annyang.addCommands(commandBot);
+                    annyang.addCommands(commandToggle);
+                    annyang.addCommands(consoleDebug);
+                } 
                 
         function sendMessage(something) {
             try {
