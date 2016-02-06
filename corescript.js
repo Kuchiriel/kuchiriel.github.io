@@ -88,10 +88,6 @@
         }
                 
 
-        function beginShit() {
-            
-                
-}
                 
         function sendMessage(something) {
             try {
@@ -141,9 +137,7 @@
         
          window.onload = function() {
             if (annyang) {
-
                 setShits();
-                beginShit();
                 annyang.start({
                     autoRestart: true
                 });
