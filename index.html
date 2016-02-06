@@ -125,8 +125,11 @@
     <script>
         window.onload = function() {
             if (annyang) {
+                
+                var defaultCommand = "(hey) " + botName + "*something";
+                
                 var commands = {
-                    '(hey) 'botName' *something': recogFunction
+                    defaultCommand: recogFunction
                 };
                 var commands2 = {
                     '(hey) *something 'botName: recogFunction
