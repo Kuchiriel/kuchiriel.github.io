@@ -22,7 +22,7 @@
             "brain/javascript.rive",
             "brain/eastereggs.rive",
             "brain/recoglanguage.rive",
-            "brain/speechtoggle.rive"
+            "brain/speechtoggle.rive",
             "brain/getvars.rive"
         ], on_load_success, on_load_error);
 
