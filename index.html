@@ -115,7 +115,9 @@ function receiveMsg(something)
             var commands3 = { 'samaritan': tempRec };
             var tempcommand = {'*something': tempSend };
             function recogFunction(something){
+            annyang.pause();
             receiveMsg(something);
+            annyang.resume();
             }
             function tempRec() {
             annyang.pause();
@@ -124,12 +126,14 @@ function receiveMsg(something)
             annyang.addCommands(tempcommand);
             }
             function tempSend(something) {
-            	 annyang.removeCommands(tempcommand);
+            	 annyang.pause();
             	 receiveMsg(something);
+            	 annyang.resume();
             }
             annyang.addCommands(commands);
             annyang.addCommands(commands2);
             annyang.addCommands(commands3);
+            annyang.removeCommands(tempcommand);
             annyang.start({ autoRestart: false });
           }
         }
