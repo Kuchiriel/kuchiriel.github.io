@@ -1,9 +1,12 @@
-        var botName = "Samaritan"
+        // Set Global Configurations
+
+        var botName = sendMessage("getbotname")
         var debugMode = false;
         var botSpeech = true;
         var recogLanguage = "en-US";
         var success = new Audio('bleep.mp3');
         var error = new Audio('error.mp3');
+
         // Create our RiveScript interpreter.
         var rs = new RiveScript({
             debug: debugMode
@@ -19,7 +22,8 @@
             "brain/javascript.rive",
             "brain/eastereggs.rive",
             "brain/recoglanguage.rive",
-            "brain/test.rive"
+            "brain/speechtoggle.rive"
+            "brain/getvars.rive"
         ], on_load_success, on_load_error);
 
         function on_load_success() {
@@ -31,22 +35,12 @@
         function on_load_error(err) {
             console.log("Engine: Loading error: " + err);
         }
-        rs.setSubroutine('toggleSpeech', function(rs, args) {
-            (args == "enable") ? botSpeech = true: botSpeech = false;
-            (botSpeech) ? console.log("Engine: Speech Enabled"): console.log("Engine: Speech Disabled");
-        });
-        rs.setSubroutine('toggleRecogLanguage', function(rs, args) {
-            recogLanguage = args;
-            annyang.setLanguage(recogLanguage);
-            console.log("Engine: Recognition Language Set To " + recogLanguage)
-        });
-
-        
+          
 
         function setShits() {
             
                 annyang.setLanguage(recogLanguage);
-                console.log("Engine: Loaded Speech Recognition");
+                addCommandsBack();
                 
                 var botCommand = {
                     '(hey) Kia *something': recogFunction
@@ -66,12 +60,7 @@
                     }
                 };
             
-            addCommandsBack();
-        }
-                
 
-        function beginShit() {
-            
                 function recogFunction(something) {
                     receiveReply(something);
                 }
@@ -92,7 +81,16 @@
                     annyang.addCommands(commandBot);
                     annyang.addCommands(commandToggle);
                     annyang.addCommands(consoleDebug);
-                }
+                }           
+
+            
+            console.log("Engine: Loaded Speech Recognition");
+        }
+                
+
+        function beginShit() {
+            
+                
 }
                 
         function sendMessage(something) {
@@ -143,6 +141,7 @@
         
          window.onload = function() {
             if (annyang) {
+
                 setShits();
                 beginShit();
                 annyang.start({
