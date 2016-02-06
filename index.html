@@ -118,7 +118,9 @@ function receiveMsg(something)
             receiveMsg(something);
             }
             function tempRec() {
+            annyang.pause();
             receiveMsg("samaritan");
+            annyang.resume();
             annyang.addCommands(tempcommand);
             }
             function tempSend(something) {
@@ -128,7 +130,7 @@ function receiveMsg(something)
             annyang.addCommands(commands);
             annyang.addCommands(commands2);
             annyang.addCommands(commands3);
-            annyang.start();
+            annyang.start({ autoRestart: false });
           }
         }
         </script>
