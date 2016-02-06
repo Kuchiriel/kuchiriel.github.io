@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Samaritan</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -18,141 +19,172 @@
     <script type="text/javascript" src="rivescript.js"></script>
     <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
     <script>
-      var debugMode = false;
-      var botSpeech = true;
-      var recogLanguage = "en-US";
-      var success = new Audio('bleep.mp3');
-      var error = new Audio('error.mp3');
-      // Create our RiveScript interpreter.
-      var rs = new RiveScript({
-      debug:   debugMode
-      });
-      // Load our files from the brain/ folder.
-      rs.loadFile([
-      "brain/begin.rive",
-      "brain/admin.rive",
-      "brain/clients.rive",
-      "brain/samaritan.rive",
-      "brain/myself.rive",
-      "brain/rpg.rive",
-      "brain/javascript.rive",
-      "brain/eastereggs.rive",
-      "brain/recoglanguage.rive",
-      "brain/test.rive"
-      ], on_load_success, on_load_error);
-      function on_load_success () {
-      // Now to sort the replies!
-      rs.sortReplies();
-      console.log("Engine: Replies Sorted");
-      }
-      function on_load_error (err) {
-      console.log("Engine: Loading error: " + err);
-      }
-      rs.setSubroutine('toggleSpeech', function(rs, args){
-      (args == "enable") ? botSpeech = true : botSpeech = false;
-      (botSpeech) ? console.log("Engine: Speech Enabled") : console.log("Engine: Speech Disabled");
-      });
-      rs.setSubroutine('toggleRecogLanguage', function(rs, args){
-      recogLanguage = args;
-      annyang.setLanguage(recogLanguage);
-      console.log("Engine: Recognition Language Set To " + recogLanguage)
-      });
-      function sendMessage (text) {
-      try {
-      var reply = rs.reply("Trevor", text);
-      console.log("Samaritan: " + reply);
-      success.play();
-      } catch(e) {
-      window.alert(e.message + "\n" + e.line);
-      console.log("Engine: " + e);
-      executeSamaritan(e.message);
-      error.play();
-      }
-      return reply;
-      }
-      function receiveMsg(something)
-      {
-      console.log("You: " + something);
-      reply = sendMessage(something);
-      if (botSpeech && responsiveVoice.voiceSupport()) {
-      function voiceStartCallback() {
-      console.log("Voice started");
-      annyang.removeCommands();
-      var shutup = { '* shut up *': shutUp };
-      var shutup = { '* resume (speak) *': resumeSpeak };
-      var pause = { '* pause (speak) *': pauseSpeak };
-      annyang.addCommands(shutup);
-      function shutUp() {
-      responsiveVoice.cancel();
-      }
-      function resumeSpeak() {
-      responsiveVoice.resume();
-      }
-      function pauseSpeak() {
-      responsiveVoice.pause();
-      }
-      }
-      function voiceEndCallback() {
-      console.log("Voice ended");
-      addCommandsBack();
-      }
-      var parameters = {
-      onstart: voiceStartCallback,
-      onend: voiceEndCallback
-      }
-      executeSamaritan("[speaking]");
-      responsiveVoice.speak(reply, "UK English Male", parameters);
-      }
-      else {
-      executeSamaritan(reply)
-      }
-      }
+        var debugMode = false;
+        var botSpeech = true;
+        var recogLanguage = "en-US";
+        var success = new Audio('bleep.mp3');
+        var error = new Audio('error.mp3');
+        // Create our RiveScript interpreter.
+        var rs = new RiveScript({
+            debug: debugMode
+        });
+        // Load our files from the brain/ folder.
+        rs.loadFile([
+            "brain/begin.rive",
+            "brain/admin.rive",
+            "brain/clients.rive",
+            "brain/samaritan.rive",
+            "brain/myself.rive",
+            "brain/rpg.rive",
+            "brain/javascript.rive",
+            "brain/eastereggs.rive",
+            "brain/recoglanguage.rive",
+            "brain/test.rive"
+        ], on_load_success, on_load_error);
+
+        function on_load_success() {
+            // Now to sort the replies!
+            rs.sortReplies();
+            console.log("Engine: Replies Sorted");
+        }
+
+        function on_load_error(err) {
+            console.log("Engine: Loading error: " + err);
+        }
+        rs.setSubroutine('toggleSpeech', function(rs, args) {
+            (args == "enable") ? botSpeech = true: botSpeech = false;
+            (botSpeech) ? console.log("Engine: Speech Enabled"): console.log("Engine: Speech Disabled");
+        });
+        rs.setSubroutine('toggleRecogLanguage', function(rs, args) {
+            recogLanguage = args;
+            annyang.setLanguage(recogLanguage);
+            console.log("Engine: Recognition Language Set To " + recogLanguage)
+        });
+
+        function sendMessage(text) {
+            try {
+                var reply = rs.reply("Trevor", text);
+                console.log("Samaritan: " + reply);
+                success.play();
+            } catch (e) {
+                window.alert(e.message + "\n" + e.line);
+                console.log("Engine: " + e);
+                executeSamaritan(e.message);
+                error.play();
+            }
+            return reply;
+        }
+
+        function receiveMsg(something) {
+            console.log("You: " + something);
+            reply = sendMessage(something);
+            if (botSpeech && responsiveVoice.voiceSupport()) {
+                function voiceStartCallback() {
+                    console.log("Voice started");
+                    annyang.removeCommands();
+                    var shutup = {
+                        '* shut up *': shutUp
+                    };
+                    var shutup = {
+                        '* resume (speak) *': resumeSpeak
+                    };
+                    var pause = {
+                        '* pause (speak) *': pauseSpeak
+                    };
+                    annyang.addCommands(shutup);
+
+                    function shutUp() {
+                        responsiveVoice.cancel();
+                    }
+
+                    function resumeSpeak() {
+                        responsiveVoice.resume();
+                    }
+
+                    function pauseSpeak() {
+                        responsiveVoice.pause();
+                    }
+                }
+
+                function voiceEndCallback() {
+                    console.log("Voice ended");
+                    addCommandsBack();
+                }
+                var parameters = {
+                    onstart: voiceStartCallback,
+                    onend: voiceEndCallback
+                }
+                executeSamaritan("[speaking]");
+                responsiveVoice.speak(reply, "UK English Male", parameters);
+            } else {
+                executeSamaritan(reply)
+            }
+        }
     </script>
     <script>
-      window.onload = function(){
-      if (annyang) {
-      var commands = { '(hey) samaritan *something': recogFunction };
-      var commands2 = { '(hey) *something samaritan': recogFunction };
-      var commands3 = { '(hey) samaritan (hey)': tempRec };
-      var tempcommand = {'*something': tempSend };
-      var debug = { '*debug': function(debug){console.log("You: " + debug);} };
-      annyang.setLanguage(recogLanguage);
-      console.log("Engine: Loaded Speech Recognition");
-      addCommandsBack();
-      function recogFunction(something){
-      receiveMsg(something);
-      }
-      function tempRec() {
-      receiveMsg("Samaritan");
-      annyang.addCommands(tempcommand);
-      }
-      function tempSend(something) {
-      receiveMsg(something);
-      annyang.removeCommands();
-      addCommandsBack();
-      }
-      function addCommandsBack()
-      {
-      annyang.addCommands(commands);
-      annyang.addCommands(commands2);
-      annyang.addCommands(commands3);
-      annyang.addCommands(debug);
-      }
-      annyang.start({ autoRestart: true });
-      }
-      }
+        window.onload = function() {
+            if (annyang) {
+                var commands = {
+                    '(hey) samaritan *something': recogFunction
+                };
+                var commands2 = {
+                    '(hey) *something samaritan': recogFunction
+                };
+                var commands3 = {
+                    '(hey) samaritan (hey)': tempRec
+                };
+                var tempcommand = {
+                    '*something': tempSend
+                };
+                var debug = {
+                    '*debug': function(debug) {
+                        console.log("You: " + debug);
+                    }
+                };
+                annyang.setLanguage(recogLanguage);
+                console.log("Engine: Loaded Speech Recognition");
+                addCommandsBack();
+
+                function recogFunction(something) {
+                    receiveMsg(something);
+                }
+
+                function tempRec() {
+                    receiveMsg("Samaritan");
+                    annyang.addCommands(tempcommand);
+                }
+
+                function tempSend(something) {
+                    receiveMsg(something);
+                    annyang.removeCommands();
+                    addCommandsBack();
+                }
+
+                function addCommandsBack() {
+                    annyang.addCommands(commands);
+                    annyang.addCommands(commands2);
+                    annyang.addCommands(commands3);
+                    annyang.addCommands(debug);
+                }
+                annyang.start({
+                    autoRestart: true
+                });
+            }
+        }
     </script>
-  </head>
-  <body>
+</head>
+
+<body>
     <div id="main">
-      <p>&nbsp;</p>
-      <hr />
+        <p>&nbsp;</p>
+        <hr />
     </div>
     <div id="marker">
-      <span id="triangle">&#9650</span>
+        <span id="triangle">&#9650</span>
     </div>
     <div class="checkbox checkbox-danger">
-      <input id="checkbox6" type="checkbox" checked>
+        <input id="checkbox6" type="checkbox" checked>
     </div>
-  </body>
+</body>
+
 </html>
