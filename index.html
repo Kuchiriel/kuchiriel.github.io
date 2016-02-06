@@ -113,6 +113,7 @@ function receiveMsg(something)
             var commands2 = { '(hey) *something samaritan': recogFunction };
             var commands3 = { '(hey) samaritan (hey)': tempRec };
             var tempcommand = {'*something': tempSend };
+            var debug = { '*debug': function(debug){console.log("You: " + debug);} };
             
             addCommands();
             
