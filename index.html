@@ -78,7 +78,6 @@
 
                 function voiceStartCallback() {
                     annyang.pause();
-                    console.log("SCallback");
                 }
 
                 function voiceEndCallback() {
@@ -145,8 +144,10 @@
 
                 function tempSend(something) {
                     annyang.removeCommands();
+                    annyang.pause();
                     receiveMsg(something);
                     addCommandsBack();
+                    annyang.resume();
                 }
 
                 function addCommandsBack() {
