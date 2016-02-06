@@ -94,10 +94,10 @@ function receiveMsg(something)
               console.log("You: " + something);
               reply = sendMessage(something);
               if (botSpeech) {
-              annyang.pause();
+   
               executeSamaritan("[speaking]");
-              responsiveVoice.speak(reply, "UK English Male");
-              annyang.resume();
+              responsiveVoice.speak(reply, "UK English Male", {onstart: annyang.pause();, onend: annyang.resume();}););
+              
               }
               else {
               executeSamaritan(reply)
