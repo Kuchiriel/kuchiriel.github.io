@@ -126,18 +126,20 @@
         window.onload = function() {
             if (annyang) {
                 
+                /*
                 var bC = '(hey) ' + botName + ' *something';
                 var cB = "(hey) *something " + botName;
                 var cT = "(hey) " + botName + " (hey)";
-                console.log(bC);
+                */
+                
                 var botCommand = {
-                    bC: recogFunction
+                    '(hey) Samaritan *something': recogFunction
                 };
                 var commandBot = {
-                    cB: recogFunction
+                    '(hey) *something Samaritan': recogFunction
                 };
                 var commandToggle = {
-                    cT: tempRec
+                    '(hey) Samaritan (hey)': tempRec
                 };
                 var tempCommand = {
                     '*something': tempSend
