@@ -35,6 +35,7 @@
                 }
 
                 function tempSend(something) {
+                    annyang.removeCommands();
                     receiveReply(something);
                     addCommandsBack();
                 }
