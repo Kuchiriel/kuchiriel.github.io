@@ -37,7 +37,7 @@ p {
 #main p.hidden {
     color: #000;
 }
-#marker #inputbox {
+#marker {
     position: absolute;
     display: block;
     width: 100%;
