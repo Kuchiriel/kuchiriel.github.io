@@ -137,6 +137,9 @@
         }        
         function receiveReply(something) {
             console.log("You: " + something);
+            console.log(https://translate.yandex.net/api/v1.5/tr.json/detect ? 
+key=trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a
+ & text=something)
             reply = sendMessage(something);
             showReply(reply);
         }
