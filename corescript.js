@@ -81,11 +81,37 @@
             else {
                 executeSamaritan(reply)
             }
-        }        
+        }  
+        
+        
+      function get_json(url, callback) {
+    http.get(url, function(res) {
+        var body = '';
+        res.on('data', function(chunk) {
+            body += chunk;
+        });
+
+        res.on('end', function() {
+            var response = JSON.parse(body);
+// call function ----v
+            callback(response);
+        });
+    });
+}
+        
         function receiveReply(something) {
             console.log("You: " + something);
-            translated = 'https://translate.yandex.net/api/v1.5/tr.json/detect?key=trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a&text=' + something;
-            console.log("Translated: " + translated);
+           
+            var key = trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a
+            
+            var url = 'https://translate.yandex.net/api/v1.5/tr.json/translate?key='
+            + key + '&text=' + something + '&lang=en';
+          
+          var translated = get_json(url, function (resp) {
+          console.log("Translated: " + resp);
+          });
+          
+          
             reply = sendMessage(something);
             showReply(reply);
         }
