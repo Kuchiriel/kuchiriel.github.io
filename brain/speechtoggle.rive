@@ -28,6 +28,8 @@
 ^ {topic=random}
 
 + *
-- {@speech} <@>
+- {topic=random}
+^ {@ speech}
+^ (@speech)
 
 < topic
