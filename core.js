@@ -1,6 +1,6 @@
         var botName = "Samaritan"
         var debugMode = false;
-        var botSpeech = true;
+        var botSpeech = false;
         var recogLanguage = "en-US";
         var success = new Audio('bleep.mp3');
         var error = new Audio('error.mp3');
