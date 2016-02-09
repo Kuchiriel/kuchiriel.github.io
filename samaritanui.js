@@ -88,7 +88,7 @@ $(document).ready(function(){
                 }
             }
             $State.lastMouseUp = Date.now();
-        }).bind("click", runRandomPhrase);
+        }).bind("click", tempRec);
 
         // And do a timed random phrase 
         randomTimePhrase();
