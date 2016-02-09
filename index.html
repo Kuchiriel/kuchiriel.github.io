@@ -9,6 +9,7 @@
    
     <!-- Others -->
     <script src="jquery-1.12.0.min.js"></script>
+    <script src="grained.min.js"></script>
 
 
     <!-- Samaritan Interface --> 
@@ -31,7 +32,7 @@
     <script src="corescript.js"></script>
     <script src="routines.js"></script>
     <script src="speech.js"></script>
-    
+  
    
 </head>
 
@@ -40,15 +41,26 @@
         <p>&nbsp;</p>
         <hr />
     </div>
-    <div id="textbox">
-        
-    </div>
-    <input id="inputbox" type="textbox"></input>
     <div id="marker">
         <span id="triangle">&#9650</span>
     </div>
 </body>
+  <script>
+        var options = {
+  "animate": true,
+  "patternWidth": 100,
+  "patternHeight": 100,
+  "grainOpacity": 0.05,
+  "grainDensity": 1,
+  "grainWidth": 1,
+  "grainHeight": 1
+}
+grained("#grain", options);
 
+/*
+background-color :rgb(245, 239, 239)
+*/
+    </script>
 </html>
 
 <!--
