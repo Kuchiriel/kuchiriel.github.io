@@ -2,6 +2,10 @@
 
 + <bot name>
 - Yes?
+- Speak
+- Say
+- Whats is it?
+- What?
 
 + <bot name> *
 - Yes? {@<star>}
