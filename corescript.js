@@ -84,33 +84,28 @@
         }  
         
         
-      function get_json(url, callback) {
-    http.get(url, function(res) {
-        var body = '';
-        res.on('data', function(chunk) {
-            body += chunk;
-        });
+     $(document).ready(function(){
+    $.ajax({
+            
+        var key = "trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a";    
+        url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key='
+            + key + '&text=' + something + '&lang=en';
 
-        res.on('end', function() {
-            var response = JSON.parse(body);
-// call function ----v
-            callback(response);
-        });
+        dataType: 'jsonp',
+        success: function(json) {
+            rates = json.rates;
+            base = json.base;
+            console.log("Translated: " + rates);
+        }
     });
-}
+});
         
         function receiveReply(something) {
             console.log("You: " + something);
            
-            var key = "trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a";
+           
             
-            var url = 'https://translate.yandex.net/api/v1.5/tr.json/translate?key='
-            + key + '&text=' + something + '&lang=en';
-          
-          var translated = get_json(url, function (resp) {
-          console.log("Translated: " + resp);
-          });
-          
+
           
             reply = sendMessage(something);
             showReply(reply);
