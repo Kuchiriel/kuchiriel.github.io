@@ -86,38 +86,14 @@
         
         
 
-jQuery( document ).ready(function() {
-jQuery.ajax({
- url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a&text=olá&lang=en',
-dataType: ‘jsonp’,
-success: function (data) {
-alert(data.text);
-}
-});
-});
 
-        
-     $(document).ready(function(){
-    $.ajax({
-            
+// url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a&text=olá&lang=en',
+ 
        
-
-        dataType: 'jsonp',
-        success: function(json) {
-            rates = json.rates;
-            base = json.base;
-            console.log("Translated: " + rates);
-        }
-    });
-});
-        
+       
         function receiveReply(something) {
             console.log("You: " + something);
-           
-           
-            
-
-          
+      
             reply = sendMessage(something);
             showReply(reply);
         }
