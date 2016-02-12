@@ -2,11 +2,9 @@
 
 + <bot name>
 - Yes?
-- Speak
-- Say
-- Please say
-- What is it?
-- What?
+- Say it.
+- Hi?
+- What's it?
 
 + <bot name> *
 - Yes? {@<star>}
