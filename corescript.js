@@ -104,7 +104,7 @@
        var text = something;
        var lang = "pt-en"; 
        
-       trsapi.open("GET", "https://translate.yandex.net/api/v1.5/tr.json/translate?key=" + key + "&text" + text + "&lang" + lang, false);
+       trsapi.open("GET", "https://translate.yandex.net/api/v1.5/tr.json/translate?key=" + key + "&text=" + text + "&lang=" + lang, false);
        trsapi.send();
 
        console.log(trsapi.status);
