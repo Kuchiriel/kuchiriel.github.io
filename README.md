@@ -12,7 +12,7 @@ We will humble try to fix some standardization and protocols to write a good one
 
 Later we will have a more ambitious goal, make it platform independent, and stand some basis to create a framework for self service softwares for kioskis and smart agents for automated help desk systems.
 
-#### Interessting tell me more...
+#### Interesting tell me more...
 Well, **K.I.A** must be small and low cost enough to fit cheap computers like Raspberry Pi or Smartphones, and robust and flexibile enough to fit in a full-stack DOM environment without compromising the previous one. 
 
 All at the same time and stand-alone also.
