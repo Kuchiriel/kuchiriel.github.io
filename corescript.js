@@ -120,7 +120,8 @@
         
        //return reply.text;
        console.log(trsreply);
-       console.log(trsreply.text);                       
+       console.log(trsreply.text); 
+       return trsreply.text;
        }
         
         function receiveReply(something) {
