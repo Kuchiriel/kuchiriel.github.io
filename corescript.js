@@ -75,12 +75,14 @@
              // console.log("Started");
              // removeCommands();
                 pauseAnnyang();
+                annyang.pause();
                 }
 
             function voiceEndCallback() {
              // console.log("Ended");
              // addCommandsBack();
                 resumeAnnyang();
+                annyang.resume();
                 }
                 
             var rvParameters = {
