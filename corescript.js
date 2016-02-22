@@ -107,10 +107,10 @@
        trsapi.open("GET", "https://translate.yandex.net/api/v1.5/tr.json/translate?key=" + key + "&text=" + text + "&lang=" + lang, false);
        trsapi.send();
 
-       console.log(trsapi.status);
-       console.log(trsapi.statusText);
+    // console.log(trsapi.status);
+    // console.log(trsapi.statusText);
         
-               
+       return trsapi.text;       
                                
        }
         
