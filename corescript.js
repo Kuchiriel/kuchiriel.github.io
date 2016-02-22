@@ -94,12 +94,16 @@
         }  
         
         // url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a&text=olá&lang=en',
-       
+       https://translate.yandex.net/api/v1.5/tr.json/translate ? key=<API key> & text=<text to translate> & lang=<translation direction>
        
        function translate(something) { 
                
        var trsapi = new XMLHttpRequest();
-       trsapi.open("GET", "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a&text=" + something + "&lang=en", false);
+       var url = https://translate.yandex.net/api/v1.5/tr.json/translate ? 
+       key = "trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a"
+       & text = something
+       & lang = "pt-en" 
+       trsapi.open("GET", url, false);
        trsapi.send();
 
        console.log(trsapi.status);
