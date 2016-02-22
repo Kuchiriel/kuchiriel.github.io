@@ -110,7 +110,8 @@
     // console.log(trsapi.status);
     // console.log(trsapi.statusText);
         
-       return trsapi.text;       
+       return trsapi.text;  
+       console.log(trsapi.text);
                                
        }
         
