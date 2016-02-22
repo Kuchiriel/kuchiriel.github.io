@@ -51,13 +51,6 @@
             return reply;
         }
         
-           function pauseAnnyang() {
-                   annyang.pause();
-           }
-           
-           function resumeAnnyang() {
-                   annyang.resume();
-           }
            function removeCommands() {
                    annyang.removeCommands();
            }
@@ -74,14 +67,14 @@
             function voiceStartCallback() {
              // console.log("Started");
              // removeCommands();
-                pauseAnnyang();
+             // pauseAnnyang();
                 annyang.pause();
                 }
 
             function voiceEndCallback() {
              // console.log("Ended");
              // addCommandsBack();
-                resumeAnnyang();
+             // resumeAnnyang();
                 annyang.resume();
                 }
                 
