@@ -6,6 +6,7 @@
         var recogLanguage = "en-US";
         var success = new Audio('bleep.mp3');
         var error = new Audio('error.mp3');
+        var lastmsg = "";
         
         // Create our RiveScript interpreter.
         var rs = new RiveScript({
@@ -93,10 +94,27 @@
         }  
         
         // url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a&text=olá&lang=en',
+       
+       
+       function translate(something) { 
+               
+       var trsapi = new XMLHttpRequest();
+       trsapi.open("GET", "https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a&text=" + something + "&lang=en", false);
+       trsapi.send();
 
+       console.log(trsapi.status);
+       console.log(trsapi.statusText);
+        
+               
+                               
+       }
+        
         function receiveReply(something) {
             console.log("You: " + something);
-      
-            reply = sendMessage(something);
+
+            (recogLanguage != "en-US") ? lastmsg = translate(something) :  lastmsg = something; 
+            
+            reply = sendMessage(lastmsg);
+            
             showReply(reply);
         }
