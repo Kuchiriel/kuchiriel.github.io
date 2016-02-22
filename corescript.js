@@ -62,11 +62,11 @@
         function showReply(reply) {
             
             function voiceStartCallback() {
-                console.log("Started");
+             // console.log("Started");
                 }
 
             function voiceEndCallback() {
-                console.log("Ended");
+             // console.log("Ended");
                 }
                 
             var rvParameters = {
