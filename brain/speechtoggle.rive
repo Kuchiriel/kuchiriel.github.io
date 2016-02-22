@@ -1,5 +1,5 @@
 ! array enable = enable start 
-^ begin|put on|turn on|take in|
+^ begin|begins|put on|turn on|take in|
 
 ! array disable = disable shutdown 
 ^ stop|put off|turn off|take out|
@@ -11,9 +11,14 @@
 - {topic=togglespeech}
 ^ <@>
 
++ [*] * [to] @speech [*]
+- {topic=togglespeech}
+^ <@>
+
 + [*] * @speech [*]
 - {topic=togglespeech}
 ^ <@>
+
 
 > topic togglespeech
 
