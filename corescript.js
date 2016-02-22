@@ -104,9 +104,9 @@
        var text = something;
        var lang = "pt-en"; 
        
-       xmlhttp.onreadystatechange = function() {
-       if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        var reply = JSON.parse(xmlhttp.responseText);
+       trsapi.onreadystatechange = function() {
+       if (trsapi.readyState == 4 && trsapi.status == 200) {
+        var reply = JSON.parse(trsapi.responseText);
 
          }
 };
