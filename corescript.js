@@ -104,14 +104,21 @@
        var text = something;
        var lang = "pt-en"; 
        
+       xmlhttp.onreadystatechange = function() {
+       if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var reply = JSON.parse(xmlhttp.responseText);
+
+         }
+};
+       
        trsapi.open("GET", "https://translate.yandex.net/api/v1.5/tr.json/translate?key=" + key + "&text=" + text + "&lang=" + lang, false);
        trsapi.send();
 
     // console.log(trsapi.status);
     // console.log(trsapi.statusText);
         
-       return trsapi.text;  
-       console.log(trsapi.text);
+       return reply.text;
+       console.log(reply);
                                
        }
         
