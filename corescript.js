@@ -1,6 +1,6 @@
         // Set Global Configurations
         
-         // var botName = sendMessage("getbotname")
+     // var botName = sendMessage("getbotname")
         var debugMode = false;
         var botSpeech = false;
         var recogLanguage = "en-US";
