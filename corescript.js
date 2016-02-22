@@ -57,16 +57,29 @@
         var error = new Audio('error.mp3');
         
         
-        
+           
+           function removeCommands() {
+                   annyang.removeCommands();
+           }
+           
+           function addCommandsBack() {
+                    annyang.addCommands(botCommand);
+                    annyang.addCommands(commandBot);
+                    annyang.addCommands(commandToggle);
+                    annyang.addCommands(consoleDebug);
+                } 
+                
         
         function showReply(reply) {
             
             function voiceStartCallback() {
              // console.log("Started");
+                removeCommands();
                 }
 
             function voiceEndCallback() {
              // console.log("Ended");
+                addCommandsBack();
                 }
                 
             var rvParameters = {
