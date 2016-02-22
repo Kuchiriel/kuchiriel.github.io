@@ -1,10 +1,7 @@
-
-
             if (annyang) {
 
                annyang.setLanguage(recogLanguage);
       
-                
                 var botCommand = {
                     '(hey) Kia *something': recogFunction
                 };
@@ -40,7 +37,6 @@
                     addCommandsBack();
                 }
                 
-                
             addCommandsBack();
             console.log("Engine: Loaded Speech Recognition");
         
@@ -48,11 +44,4 @@
                     autoRestart: true
                 });
             }
-        
-        
-           function addCommandsBack() {
-                    annyang.addCommands(botCommand);
-                    annyang.addCommands(commandBot);
-                    annyang.addCommands(commandToggle);
-                    annyang.addCommands(consoleDebug);
-                } 
+     
