@@ -1,11 +1,11 @@
-! array enable = enable start 
+! array enable = enable start place
 ^ begin|begins|put on|turn on|take in|
 
 ! array disable = disable shutdown 
 ^ stop|put off|turn off|take out|
 
 ! array speech = speech voice vocalization 
-^ talk talking speak speaking
+^ talk talking speak speaking dialog
 
 + [*] @speech * [*]
 - {topic=togglespeech}
