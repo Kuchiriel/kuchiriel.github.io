@@ -15,6 +15,10 @@
 - {topic=togglespeech}
 ^ <@>
 
++ * [to|the|a] @speech [*]
+- {topic=togglespeech}
+^ <@>
+
 > topic togglespeech
 
 + @enable
