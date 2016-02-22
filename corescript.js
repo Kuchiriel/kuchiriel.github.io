@@ -99,6 +99,7 @@
        function translate(something) { 
                
        var trsapi = new XMLHttpRequest();
+       var trsreply;
       
        var key = "trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a";
        var text = something;
@@ -106,7 +107,7 @@
        
        trsapi.onreadystatechange = function() {
        if (trsapi.readyState == 4 && trsapi.status == 200) {
-        var reply = JSON.parse(trsapi.responseText);
+        trsreply = JSON.parse(trsapi.responseText);
 
          }
 };
@@ -117,9 +118,9 @@
     // console.log(trsapi.status);
     // console.log(trsapi.statusText);
         
-       return reply.text;
-       console.log(reply);
-                               
+       //return reply.text;
+       console.log(trsreply);
+       console.log(trsreply.text);                       
        }
         
         function receiveReply(something) {
