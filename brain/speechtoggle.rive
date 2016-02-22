@@ -1,10 +1,10 @@
-! array enable = enable start place begins
+! array enable = enable start place begins\n
 ^ begin|put on|turn on|take in|
 
-! array disable = disable shutdown 
+! array disable = disable shutdown\n 
 ^ stop|put off|turn off|take out|
 
-! array speech = speech voice vocalization 
+! array speech = speech voice vocalization\n
 ^ talk talking speak speaking dialog
 
 + [*] @speech * [*]
