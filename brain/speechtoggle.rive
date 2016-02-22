@@ -1,5 +1,5 @@
-! array enable = enable start place
-^ begin|begins|put on|turn on|take in|
+! array enable = enable start place begins
+^ begin|put on|turn on|take in|
 
 ! array disable = disable shutdown 
 ^ stop|put off|turn off|take out|
@@ -14,11 +14,6 @@
 + [*] * [to|the] @speech [*]
 - {topic=togglespeech}
 ^ <@>
-
-+ [*] * @speech [*]
-- {topic=togglespeech}
-^ <@>
-
 
 > topic togglespeech
 
@@ -35,6 +30,5 @@
 + *
 - {topic=random}
 ^ <@>
-
 
 < topic
