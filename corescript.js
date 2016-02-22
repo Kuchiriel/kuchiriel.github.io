@@ -1,7 +1,12 @@
         // Set Global Configurations
-
-       
-
+        
+         // var botName = sendMessage("getbotname")
+        var debugMode = false;
+        var botSpeech = false;
+        var recogLanguage = "en-US";
+        var success = new Audio('bleep.mp3');
+        var error = new Audio('error.mp3');
+        
         // Create our RiveScript interpreter.
         var rs = new RiveScript({
             debug: debugMode
@@ -32,7 +37,6 @@
             console.log("Engine: Loading error: " + err);
         }
           
-
         function sendMessage(something) {
             try {
                 var reply = rs.reply("Trevor", something);
@@ -47,17 +51,13 @@
             return reply;
         }
         
-        
-        
-         // var botName = sendMessage("getbotname")
-        var debugMode = false;
-        var botSpeech = false;
-        var recogLanguage = "en-US";
-        var success = new Audio('bleep.mp3');
-        var error = new Audio('error.mp3');
-        
-        
+           function pauseAnnyang() {
+                   annyang.pause();
+           }
            
+           function resumeAnnyang() {
+                   annyang.resume();
+           }
            function removeCommands() {
                    annyang.removeCommands();
            }
@@ -69,17 +69,18 @@
                     annyang.addCommands(consoleDebug);
                 } 
                 
-        
         function showReply(reply) {
             
             function voiceStartCallback() {
              // console.log("Started");
-                removeCommands();
+             // removeCommands();
+                pauseAnnyang();
                 }
 
             function voiceEndCallback() {
              // console.log("Ended");
-                addCommandsBack();
+             // addCommandsBack();
+                resumeAnnyang();
                 }
                 
             var rvParameters = {
@@ -96,22 +97,11 @@
             }
         }  
         
-        
-        
+        // url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a&text=olá&lang=en',
 
-
-// url: 'https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a&text=olá&lang=en',
- 
-       
-       
         function receiveReply(something) {
             console.log("You: " + something);
       
             reply = sendMessage(something);
             showReply(reply);
         }
-        
-        
-        
-        
-        
