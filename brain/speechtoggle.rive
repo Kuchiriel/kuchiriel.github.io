@@ -7,15 +7,17 @@
 ! array speech = speech voice vocalization 
 ^ talk talking speak speaking dialog
 
-+ [*] (@speech) * [*]
++ [*] @speech * [*]
 - {topic=togglespeech}
 ^ <@>
 
-+ [*] * [to|the|a] (@speech) [*]
++ * @speech
 - {topic=togglespeech}
 ^ <@>
 
-
++ [*] * [to|the|a] @speech [*]
+- {topic=togglespeech}
+^ <@>
 
 > topic togglespeech
 
