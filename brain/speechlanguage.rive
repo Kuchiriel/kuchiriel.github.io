@@ -9,12 +9,12 @@
 > topic speechlanguage
 
 + [english|american]
-- Listening in English
+- Speaking in English
 ^ <call>toggleSpeechLanguage en-US</call>
 ^ {topic=random}
 
 + [portuguese|brazilian]
-- Listening in Portuguese
+- Speaking in Portuguese
 ^ <call>toggleSpeechLanguage pt-BR</call>
 ^ {topic=random}
 
