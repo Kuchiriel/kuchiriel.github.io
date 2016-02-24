@@ -128,7 +128,7 @@ var executeSamaritan = function(phrase)
         return;
 
     $State.isText = true
-    var phraseArray = phrase.split(" ");
+    var phraseArray = phrase.toString().split(" ");
     // First, finish() the blink animation and
     // scale down the marker triangle
     $State.triangle.finish().animate({
