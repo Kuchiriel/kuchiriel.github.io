@@ -49,9 +49,9 @@
         if (argument == "output")
         {
         first = "en"
-        second = outputLanguage.substring(0,1);
+        second = outputLanguage.toString().substring(0,1);
         } else {
-        first = recogLanguage.substring(0,1);
+        first = recogLanguage.toString().substring(0,1);
         second = "en"
         }
         
