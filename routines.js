@@ -11,6 +11,6 @@
         
      rs.setSubroutine('toggleSpeechLanguage', function(rs, args) {
         outputLanguage = args;
-        setSpeechVoice();
+        corescript.setSpeechVoice();
         console.log("Engine: Speech Language Set To " + outputLanguage)
         });    
