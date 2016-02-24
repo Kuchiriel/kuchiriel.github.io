@@ -8,14 +8,19 @@
 
 > topic speechlanguage
 
-+ [english|american]
++ (english|american)
 - Speaking in English
 ^ <call>toggleSpeechLanguage en-US</call>
 ^ {topic=random}
 
-+ [portuguese|brazilian]
++ (portuguese|brazilian)
 - Speaking in Portuguese
 ^ <call>toggleSpeechLanguage pt-BR</call>
+^ {topic=random}
+
++ german
+- Speaking in German
+^ <call>toggleSpeechLanguage de</call>
 ^ {topic=random}
 
 + @enable
