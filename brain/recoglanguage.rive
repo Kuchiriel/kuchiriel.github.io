@@ -13,14 +13,19 @@
 
 > topic recoglanguage
 
-+ [english|american]
++ (english|american)
 - Listening in English
 ^ <call>toggleRecogLanguage en-US</call>
 ^ {topic=random}
 
-+ [portuguese|brazilian]
++ (portuguese|brazilian)
 - Listening in Portuguese
 ^ <call>toggleRecogLanguage pt-BR</call>
+^ {topic=random}
+
++ german
+- Listening in German
+^ <call>toggleRecogLanguage de</call>
 ^ {topic=random}
 
 + *
