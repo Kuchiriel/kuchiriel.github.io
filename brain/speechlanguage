@@ -1,0 +1,35 @@
++ [*] @set @speech [to|into|for|by] * [*]
+- {topic=speechlanguage}
+^ <@>
+
++ [*] @speech [in|at|into|for|by|to] * [*]
+- {topic=speechlanguage}
+^ <@>
+
+> topic speechlanguage
+
++ [english|american]
+- Listening in English
+^ <call>toggleSpeechLanguage en-US</call>
+^ {topic=random}
+
++ [portuguese|brazilian]
+- Listening in Portuguese
+^ <call>toggleSpeechLanguage pt-BR</call>
+^ {topic=random}
+
++ @enable
+- Enabling Speech
+^ <call>toggleSpeech enable</call>
+^ {topic=random}
+
++ @disable
+- Disabling Speech
+^ <call>toggleSpeech disable</call>
+^ {topic=random}
+
++ *
+- {topic=random} 
+^ <@>
+
+< topic
