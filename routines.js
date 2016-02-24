@@ -11,6 +11,17 @@
         
      rs.setSubroutine('toggleSpeechLanguage', function(rs, args) {
         outputLanguage = args;
-        corescript.setSpeechVoice();
+        setSpeechVoice();
         console.log("Engine: Speech Language Set To " + outputLanguage)
         });    
+
+
+    function setSpeechVoice() {
+                if (outputLanguage == "pt") {
+                speechVoice = "Brazilian Portuguese Female";
+                } else if (outputLanguage == "de") {
+                speechVoice = "Deutsch Female";       
+                } else {
+                speechVoice = "UK English Male";         
+                }
+        }
