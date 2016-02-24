@@ -11,5 +11,6 @@
         
      rs.setSubroutine('toggleSpeechLanguage', function(rs, args) {
         outputLanguage = args;
+        setSpeechVoice();
         console.log("Engine: Speech Language Set To " + outputLanguage)
         });    
