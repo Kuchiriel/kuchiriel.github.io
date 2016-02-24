@@ -111,16 +111,6 @@
           onend: voiceEndCallback
          }
          
-        function setSpeechVoice() {
-                if (outputLanguage == "pt") {
-                speechVoice = "Brazilian Portuguese Female";
-                } else if (outputLanguage == "de") {
-                speechVoice = "Deutsch Female";       
-                } else {
-                speechVoice = "UK English Male";         
-                }
-        }
-        
          if (botSpeech && responsiveVoice.voiceSupport()) {
           executeSamaritan("[speaking]");
           responsiveVoice.speak(reply, speechVoice, rvParameters);
