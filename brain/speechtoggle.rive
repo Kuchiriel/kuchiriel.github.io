@@ -11,9 +11,13 @@
 - {topic=togglespeech}
 ^ <@>
 
-+ [*] * @speech [*]
-- <star1> <star2> <star3>
++ [*] * (the|to|a) @speech [*]
+- {topic=togglespeech}
+^ <@>
 
++ [*] * @speech [*]
+- {topic=togglespeech}
+^ <@>
 
 > topic togglespeech
 
