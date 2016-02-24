@@ -11,7 +11,7 @@
 - {topic=togglespeech}
 ^ <@>
 
-+ * @speech
++ * @speech {weight=1}
 - {topic=togglespeech}
 ^ <@>
 
