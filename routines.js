@@ -17,7 +17,7 @@
 
 
     function setSpeechVoice() {
-                if (outputLanguage == "pt") {
+                if (outputLanguage == "pt-BR") {
                 speechVoice = "Brazilian Portuguese Female";
                 } else if (outputLanguage == "de") {
                 speechVoice = "Deutsch Female";       
