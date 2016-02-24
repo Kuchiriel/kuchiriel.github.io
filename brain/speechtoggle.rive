@@ -11,12 +11,8 @@
 - {topic=togglespeech}
 ^ <@>
 
-+ * [to|the|a] @speech{weight=1}
-- {topic=togglespeech}
-^ <@>
-
 + [*] * [to|the|a] @speech [*]
-- {topic=togglespeech}
+- {topic=togglespeech} bla
 ^ <@> 
 
 > topic togglespeech
