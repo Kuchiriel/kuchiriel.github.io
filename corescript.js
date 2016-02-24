@@ -65,7 +65,7 @@
          try {
           var reply = rs.reply("Trevor", something);
           if (outputLanguage != "en-US") {
-                reply = translate(reply, handleDirection("output"));
+                reply = translate(reply, handleDirection("output")).toString();
           }
        
           console.log("Samaritan: " + reply);
