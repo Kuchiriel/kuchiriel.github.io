@@ -42,30 +42,18 @@
         }
 
        function handleDirection(argument) {
-               
-        var first = "pt";
-        var second = "en";
-        
-        if (argument == "output")
-        {
-        first = "en"
-        second = outputLanguage.toString().substring(0,2);
-        } else {
-        first = recogLanguage.toString().substring(0,2);
-        second = "en"
-        }
-        
-        var direction = first + "-" + second;
-        
-       return direction.toString();
+        var direction; 
+        (argument == "output") ?
+        direction = "en-" + outputLanguage.toString().substring(0,2):
+        direction = recogLanguage.toString().substring(0,2) + "-en";
+        return direction.toString();
        }
       
-        
         function sendMessage(something) {
          try {
           var reply = rs.reply("Trevor", something);
           if (outputLanguage != "en-US") {
-                reply = translate(reply, handleDirection("output")).toString();
+                reply = translate(reply, handleDirection("output"));
           }
        
           console.log("Samaritan: " + reply);
