@@ -142,9 +142,9 @@
          // console.log(trsapi.status);
          // console.log(trsapi.statusText);
 
-         //return reply.text;
-         console.log(trsreply);
-         console.log(trsreply.text);
+         //  return reply.text;
+         //  console.log(trsreply);
+         //  console.log(trsreply.text);
          return trsreply.text;
         }
 
