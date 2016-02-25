@@ -57,7 +57,7 @@
         
         var direction = first + "-" + second;
         
-       return direction;
+       return direction.toString();
        }
       
         
@@ -132,7 +132,7 @@
           if (trsapi.readyState == 4 && trsapi.status == 200) {
            trsreply = JSON.parse(trsapi.responseText);
           } else {
-           // console.log(trsapi.status);
+           console.log(trsapi.status);
           }
          };
 
@@ -153,5 +153,4 @@
          (recogLanguage != "en-US") ? lastmsg = translate(something, handleDirection("input")): lastmsg = something;
          reply = sendMessage(lastmsg);
          showReply(reply);
-         
         }
