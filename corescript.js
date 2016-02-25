@@ -132,7 +132,7 @@
           if (trsapi.readyState == 4 && trsapi.status == 200) {
            trsreply = JSON.parse(trsapi.responseText);
           } else {
-           console.log(trsapi.status);
+           // console.log(trsapi.status);
           }
          };
 
