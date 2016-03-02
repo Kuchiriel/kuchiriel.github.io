@@ -21,7 +21,7 @@
         console.log("Engine: Searching for " + args)
     }); 
 
-   function OpenInNewTab(url) {
+    function OpenInNewTab(url) {
         var win = window.open(url, '_blank');
         win.focus();
     }
