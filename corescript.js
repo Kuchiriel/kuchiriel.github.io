@@ -28,6 +28,7 @@
          "brain/recoglanguage.rive",
          "brain/speechlanguage.rive",
          "brain/speechtoggle.rive",
+         "brain/search.rive",
          "brain/getvars.rive"
         ], on_load_success, on_load_error);
 
