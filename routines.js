@@ -13,8 +13,18 @@
         outputLanguage = args;
         setSpeechVoice();
         console.log("Engine: Speech Language Set To " + outputLanguage)
-        });    
+        });
+        
+        rs.setSubroutine('webSearch', function(rs, args) {
+        var google = "https://www.google.com.br/?q=";
+        OpenInNewTab(google + url);
+        console.log("Engine: Speech Language Set To " + outputLanguage)
+        }); 
 
+   function OpenInNewTab(url) {
+               var win = window.open(url, '_blank');
+               win.focus();
+        }
 
     function setSpeechVoice() {
                 if (outputLanguage == "pt-BR") {
