@@ -1,5 +1,5 @@
 ! array search = search research find
 
 + [*] @search [for|by] * [*]
-- Searching <star2> <star2>
+- Searching for <star>
 ^ <call>webSearch <star></call>
