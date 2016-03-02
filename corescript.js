@@ -116,6 +116,7 @@
          var key = "trnsl.1.1.20160209T133106Z.3dc9bb19cc139b13.f1065a13645d8992a5b7357812a092551edb338a";
          var text = something;
          var lang = direction;
+         var args = key + "&text=" + text + "&lang=" + lang;
 
          trsapi.onreadystatechange = function() {
           if (trsapi.readyState == 4 && trsapi.status == 200) {
@@ -125,7 +126,7 @@
           }
          };
 
-         trsapi.open("GET", "https://translate.yandex.net/api/v1.5/tr.json/translate?key=" + key + "&text=" + text + "&lang=" + lang, false);
+         trsapi.open("GET", "https://translate.yandex.net/api/v1.5/tr.json/translate?key=" + args, false);
          trsapi.send();
 
          // console.log(trsapi.status);
