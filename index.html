@@ -11,7 +11,6 @@
     <script src="jquery-1.12.0.min.js"></script>
     <script src="grained.min.js"></script>
 
-
     <!-- Samaritan Interface --> 
     <link rel="icon" sizes="192x192" href="img/icon.png">
     <script src="screenfull.min.js"></script>
@@ -32,6 +31,11 @@
     <script src="corescript.js"></script>
     <script src="routines.js"></script>
     <script src="speech.js"></script>
+    
+    <!-- Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-route.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-animate.min.js"></script>
   
    
 </head>
@@ -44,6 +48,19 @@
     <div id="marker">
         <span id="triangle">&#9650</span>
     </div>
+    
+    <div ng-app="app" ng-controller="ctrl" ng-class="animation">
+
+  <div class="links">
+    <a href="#/first">First</a>
+    <a href="#/second">Second</a>
+    <a href="#/third">Third</a>
+  </div>
+
+  <div ng-view class="view">
+
+  </div>
+    
 </body>
   <script>
         var options = {
