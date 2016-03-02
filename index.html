@@ -38,6 +38,119 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-animate.min.js"></script>
     <script src="angular.js"></script>
   
+   <style>
+       /* Default view */
+.view{
+  position: absolute;
+  top: 100px;
+  width: 100%;
+  transition: 300ms;
+}
+
+/* First animation*/
+.first .view.ng-enter{
+  left: -100%;
+}
+
+.first .view.ng-enter.ng-enter-active{
+  left: 0%;
+}
+
+.first .view.ng-leave{
+  left: 0%;
+}
+
+.first .view.ng-leave.ng-leave-active{
+  left: 100%;
+}
+
+/* Second animation*/
+.second .view.ng-enter{
+  left: 100%;
+}
+
+.second .view.ng-enter.ng-enter-active{
+  left: 0%;
+}
+
+.second .view.ng-leave{
+  left: 0%;
+}
+
+.second .view.ng-leave.ng-leave-active{
+  left: -100%;
+}
+
+/* Third animation*/
+.third .view.ng-enter{
+  top: 100%;
+}
+
+.third .view.ng-enter.ng-enter-active{
+  top: 0%;
+}
+
+.third .view.ng-leave{
+  top: 0%;
+}
+
+.third .view.ng-leave.ng-leave-active{
+  top: -100%;
+}
+
+/* Third animation*/
+.welcome .view.ng-enter{
+  opacity: 0;
+}
+
+
+
+/* Layout style.... */
+body{
+  background: #232323;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  font-family: helvetica, arial;
+}
+
+.links{
+  margin: 24px;
+  text-align: center;
+}
+
+a,
+a:visited{
+  color: inherit;
+  text-decoration: none;
+  padding: 8px 14px;
+  margin: 10px 5px;
+  font-size: 12px;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+a:hover{
+  border: 1px solid tomato;
+  background-color: tomato;
+}
+
+.box{
+  width: 100%;
+  position: absolute;
+  height: 300px;
+  background: tomato;
+  line-height: 300px;
+  text-align: center;
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+.box.n{
+  text-transform: none;
+}
+   </style>
    
 </head>
 
