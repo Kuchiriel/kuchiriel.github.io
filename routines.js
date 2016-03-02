@@ -15,10 +15,10 @@
         console.log("Engine: Speech Language Set To " + outputLanguage)
         });
         
-        rs.setSubroutine('webSearch', function(rs, args) {
+    rs.setSubroutine('webSearch', function(rs, args) {
         var google = "https://www.google.com.br/?q=";
-        OpenInNewTab(google + url);
-        console.log("Engine: Speech Language Set To " + outputLanguage)
+        OpenInNewTab(google + args);
+        console.log("Engine: Searching for " + args)
         }); 
 
    function OpenInNewTab(url) {
