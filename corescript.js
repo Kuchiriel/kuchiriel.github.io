@@ -102,7 +102,7 @@
          
          if (botSpeech && responsiveVoice.voiceSupport()) {
           executeSamaritan("[speaking]");
-          responsiveVoice.speak(reply, speechVoice, rvParameters);
+          responsiveVoice.speak(reply.toString(), speechVoice, rvParameters);
          } else {
           executeSamaritan(reply)
          }
