@@ -38,6 +38,20 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-animate.min.js"></script>
     <script src="angular.js"></script>
   
+  <script>
+  (function() {
+    var cx = '006065037536411086998:lwnhrvdcwgs';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
 
 </head>
 
@@ -48,6 +62,7 @@
     </div>
     <div id="marker">
         <span id="triangle">&#9650</span>
+        <gcse:search></gcse:search>
     </div>
     
 </body>
