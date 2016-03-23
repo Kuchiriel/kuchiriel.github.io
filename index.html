@@ -1,116 +1,100 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Samaritan</title>
-    <meta charset="UTF-8">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
-   
-    <!-- Others -->
-    <script src="jquery-1.12.0.min.js"></script>
-    <script src="grained.min.js"></script>
-
-    <!-- Samaritan Interface --> 
-    <link rel="icon" sizes="192x192" href="img/icon.png">
-    <script src="screenfull.min.js"></script>
-    <script src="samaritanui.js"></script>
-    <link rel="stylesheet" type="text/css" href="samaritan.css">
-    
-    <!-- Speech Recognition -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.2.1/annyang.min.js"></script>
-    
-    <!-- Natural Language Processor Library -->
-    <script src="datadumper.js"></script>
-    <script src="rivescript.js"></script>
-    
-    <!-- Text to Speech -->
-    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
-    
-    <!-- Core Scripts -->
-    <script src="corescript.js"></script>
-    <script src="routines.js"></script>
-    <script src="speech.js"></script>
-    
-    <!-- Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-route.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-animate.min.js"></script>
-    <script src="angular.js"></script>
-  
-<script>
-  (function() {
-    var cx = '006065037536411086998:lwnhrvdcwgs';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
-
-
-
-
-</head>
-
-<body>
-    
-    <div id="main">
-        <gcse:searchresults-only>hi</gcse:searchresults-only>
-        <p>&nbsp;</p>
-        <hr />
-    </div>
-    <div id="marker">
-        <span id="triangle">&#9650</span>
-    </div>
-    
-</body>
+   <head>
+      <title>Samaritan</title>
+      <meta charset="UTF-8">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+      <!-- Others -->
+      <script src="jquery-1.12.0.min.js"></script>
+      <script src="grained.min.js"></script>
+      <!-- Samaritan Interface --> 
+      <link rel="icon" sizes="192x192" href="img/icon.png">
+      <script src="screenfull.min.js"></script>
+      <script src="samaritanui.js"></script>
+      <link rel="stylesheet" type="text/css" href="samaritan.css">
+      <!-- Speech Recognition -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.2.1/annyang.min.js"></script>
+      <!-- Natural Language Processor Library -->
+      <script src="datadumper.js"></script>
+      <script src="rivescript.js"></script>
+      <!-- Text to Speech -->
+      <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+      <!-- Core Scripts -->
+      <script src="corescript.js"></script>
+      <script src="routines.js"></script>
+      <script src="speech.js"></script>
+      <!-- Angular -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-route.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.16/angular-animate.min.js"></script>
+      <script src="angular.js"></script>
+      <script>
+         (function() {
+           var cx = '006065037536411086998:lwnhrvdcwgs';
+           var gcse = document.createElement('script');
+           gcse.type = 'text/javascript';
+           gcse.async = true;
+           gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+               '//cse.google.com/cse.js?cx=' + cx;
+           var s = document.getElementsByTagName('script')[0];
+           s.parentNode.insertBefore(gcse, s);
+         })();
+      </script>
+   </head>
+   <body>
+      <div>
+         <gcse:searchresults-only>hi</gcse:searchresults-only>
+         <div id="main">
+            <p>&nbsp;</p>
+            <hr />
+         </div>
+         <div id="marker">
+            <span id="triangle">&#9650</span>
+         </div>
+      </div>
+   </body>
 </html>
-
 <!--
-    // Further Implements - Script
-    
-                /*
-                var bC = '(hey) ' + botName + ' *something';
-                var cB = "(hey) *something " + botName;
-                var cT = "(hey) " + botName + " (hey)";
-                */
-    
-                 /* 
-                    var shutup = {
-                        '* shut up *': shutUp
-                    };
-                    var shutup = {
-                        '* resume (speak) *': resumeSpeak
-                    };
-                    var pause = {
-                        '* pause (speak) *': pauseSpeak
-                    };
-                    annyang.addCommands(shutup);
-
-                    function shutUp() {
-                        responsiveVoice.cancel();
-                    }
-
-                    function resumeSpeak() {
-                        responsiveVoice.resume();
-                    }
-
-                    function pauseSpeak() {
-                        responsiveVoice.pause();
-                    }
-                */
--->
-
+   // Further Implements - Script
+   
+               /*
+               var bC = '(hey) ' + botName + ' *something';
+               var cB = "(hey) *something " + botName;
+               var cT = "(hey) " + botName + " (hey)";
+               */
+   
+                /* 
+                   var shutup = {
+                       '* shut up *': shutUp
+                   };
+                   var shutup = {
+                       '* resume (speak) *': resumeSpeak
+                   };
+                   var pause = {
+                       '* pause (speak) *': pauseSpeak
+                   };
+                   annyang.addCommands(shutup);
+   
+                   function shutUp() {
+                       responsiveVoice.cancel();
+                   }
+   
+                   function resumeSpeak() {
+                       responsiveVoice.resume();
+                   }
+   
+                   function pauseSpeak() {
+                       responsiveVoice.pause();
+                   }
+               */
+   -->
 <!--
-    Further Implements - HTML
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="awesome-bootstrap-checkbox.css">
-    
-     <div class="checkbox checkbox-danger">
-        <input id="checkbox6" type="checkbox" checked>
-    </div>
--->
+   Further Implements - HTML
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+   <link rel="stylesheet" type="text/css" href="awesome-bootstrap-checkbox.css">
+   
+    <div class="checkbox checkbox-danger">
+       <input id="checkbox6" type="checkbox" checked>
+   </div>
+   -->
