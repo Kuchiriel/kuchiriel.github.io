@@ -26,7 +26,7 @@
     //  var search = "https://kuchiriel.github.io/?q=";
     //  OpenIn("_self", search + args);
         executeQuery(args.join(" "), "pic");
-        console.log("Engine: Searching for " + args.join(" ") + "pictures.")
+        console.log("Engine: Searching for " + args.join(" ") + " pictures.")
     }); 
 
     function OpenIn(target, url) {
