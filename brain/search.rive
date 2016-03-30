@@ -8,7 +8,7 @@
 
 > topic search
 
-+ @pictures
++ @pictures *
 - <call>picSearch <star></call>
 ^ {topic=random}
 
