@@ -18,14 +18,14 @@
     rs.setSubroutine('webSearch', function(rs, args) {
     //  var search = "https://kuchiriel.github.io/?q=";
     //  OpenIn("_self", search + args);
-        executeQuery(args, "search");
+        executeQuery(args.join(" "), "search");
         console.log("Engine: Searching for " + args)
     }); 
     
       rs.setSubroutine('picSearch', function(rs, args) {
     //  var search = "https://kuchiriel.github.io/?q=";
     //  OpenIn("_self", search + args);
-        executeQuery(args, "pic");
+        executeQuery(args.join(" "), "pic");
         console.log("Engine: Searching for " + args + " images")
     }); 
 
