@@ -3,12 +3,12 @@
 
 + [*] @search [for|by] * 
 - Searching for <star>
-^ {topic=webSearch}
+^ {topic=search}
 ^ <@>
 
-> topic webSearch
+> topic search
 
-+ [@pictures]
++ @pictures
 - <call>picSearch <star></call>
 ^ {topic=random}
 
