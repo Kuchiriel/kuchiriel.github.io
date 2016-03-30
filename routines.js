@@ -17,15 +17,15 @@
         
     rs.setSubroutine('webSearch', function(rs, args) {
         var search = "https://kuchiriel.github.io/?q=";
-        OpenInNewTab(search + args);
+        OpenIn("_self", search + args);
         console.log("Engine: Searching for " + args)
     }); 
 
-    function OpenInNewTab(url) {
-        var win = window.open(url, '_blank');
+    function OpenIn(target, url) {
+        var win = window.open(url, target);
         win.focus();
     }
-
+    
     function setSpeechVoice() {
         if (outputLanguage == "pt-BR") {
         speechVoice = "Brazilian Portuguese Female";
