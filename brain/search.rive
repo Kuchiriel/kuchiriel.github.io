@@ -1,5 +1,19 @@
 ! array search = search research find
+! array pictures = pictures images picture image
 
-+ [*] @search [for|by] *
++ [*] @search [for|by] * 
 - Searching for <star>
-^ <call>webSearch <star></call>
+^ {topic=webSearch}
+^ <@>
+
+> topic webSearch
+
++ [@pictures]
+- <call>picSearch <star></call>
+^ {topic=random}
+
++ *
+- <call>webSearch <star></call>
+^ {topic=random}
+
+< topic
