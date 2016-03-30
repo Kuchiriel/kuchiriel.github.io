@@ -16,8 +16,8 @@
     });
         
     rs.setSubroutine('webSearch', function(rs, args) {
-        var google = "https://www.google.com.br/?q=";
-        OpenInNewTab(google + args);
+        var search = "https://kuchiriel.github.io/?q=";
+        OpenInNewTab(search + args);
         console.log("Engine: Searching for " + args)
     }); 
 
