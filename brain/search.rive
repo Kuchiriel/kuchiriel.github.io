@@ -8,7 +8,7 @@
 
 > topic search
 
-+ @pictures [of|of a|of an] *
++ @pictures [of] [a|an] *
 - <call>picSearch <star></call>
 ^ {topic=random}
 
