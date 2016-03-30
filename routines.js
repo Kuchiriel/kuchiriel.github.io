@@ -16,9 +16,17 @@
     });
         
     rs.setSubroutine('webSearch', function(rs, args) {
-        var search = "https://kuchiriel.github.io/?q=";
-        OpenIn("_self", search + args);
+    //  var search = "https://kuchiriel.github.io/?q=";
+    //  OpenIn("_self", search + args);
+        executeQuery(args, "search");
         console.log("Engine: Searching for " + args)
+    }); 
+    
+      rs.setSubroutine('picSearch', function(rs, args) {
+    //  var search = "https://kuchiriel.github.io/?q=";
+    //  OpenIn("_self", search + args);
+        executeQuery(args, "pic");
+        console.log("Engine: Searching for " + args + " images")
     }); 
 
     function OpenIn(target, url) {
