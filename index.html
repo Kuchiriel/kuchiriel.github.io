@@ -42,8 +42,15 @@
          })();
       </script>
          <script type="text/javascript">
-  function executeQuery(param) {
+  function executeQuery(param, elem) {
+    if (elem == "search")
+    {
     var element = google.search.cse.element.getElement('searchresults-only0');
+    }
+    else {
+   var element = google.search.cse.element.getElement('searchresults-only1');
+    }
+    
     if (param == '') {
       element.clearAllResults();
     } else {
@@ -56,12 +63,14 @@
          #content {
             visibility: hidden;
          }
-    
       </style>
    </head>
    <body>
          <div id="content">
-         <gcse:searchresults-only></gcse:searchresults-only>
+         <gcse:searchresults-only>
+         </gcse:searchresults-only>
+         <gcse:searchresults-only enableImageSearch="true" defaultToImageSearch="true">
+         </gcse:searchresults-only>
          </div>
          <div id="ui">
          <div id="main">
