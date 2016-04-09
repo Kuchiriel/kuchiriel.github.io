@@ -158,4 +158,3 @@
      var data = sendMessage(urlSend).toString();
      xhr.send(data);
     }
-    
