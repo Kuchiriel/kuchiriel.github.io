@@ -24,6 +24,14 @@
                 function recogFunction(something) {
                     receiveReply(something);
                 }
+                
+                 var urlSend = getUrlParameter('send');
+
+    if (urlSend !== undefined)
+    {
+     urlSend = urlSend.split('%20').join(' ').split('%22').join('').split('%27').join("'").toString();
+     document.body.innerHTML = receiveReply(urlSend);
+    }
 
                 function tempRec() {
                     annyang.removeCommands();
