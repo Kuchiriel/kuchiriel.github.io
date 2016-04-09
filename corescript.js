@@ -150,6 +150,7 @@
          (recogLanguage != "en-US") ? lastmsg = translate(something, handleDirection("input")): lastmsg = something;
          reply = sendMessage(lastmsg);
          showReply(reply);
+         return reply;
         }
         
    
