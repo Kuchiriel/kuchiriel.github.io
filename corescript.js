@@ -150,12 +150,12 @@
    
     if (urlSend !== undefined)
     {
-     urlSend = urlSend.split('%20').join(' ').split('%22').join('').split('%27').join("'");
+     urlSend = urlSend.split('%20').join(' ').split('%22').join('').split('%27').join("'").toString();
      xhr = new XMLHttpRequest();
      var url = "url";
      xhr.open("POST", url, true);
      xhr.setRequestHeader("Content-type", "application/json");
-     var data = sendMessage(urlSend);
+     var data = sendMessage(urlSend).toString();
      xhr.send(data);
     }
     
