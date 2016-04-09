@@ -1,6 +1,6 @@
-        // Set Global Configurations
+     // Set Global Configurations
 
-       // var botName = sendMessage("getbotname")
+     // var botName = sendMessage("getbotname")
         var urlSend = getUrlParameter('send');
         var debugMode = false;
         var botSpeech = false;
@@ -11,12 +11,12 @@
         var error = new Audio('error.mp3');
         var lastmsg = "";
 
-        // Create our RiveScript interpreter.
+     // Create our RiveScript interpreter.
         var rs = new RiveScript({
          debug: debugMode
         });
 
-        // Load our files from the brain/ folder.
+     // Load our files from the brain/ folder.
         rs.loadFile([
          "brain/begin.rive",
          "brain/admin.rive",
@@ -151,12 +151,10 @@
     if (urlSend !== undefined)
     {
      urlSend = urlSend.split('%20').join(' ').split('%22').join('').split('%27').join("'");
-        
-xhr = new XMLHttpRequest();
-var url = "url";
-xhr.setRequestHeader("Content-type", "application/json");
-var data = sendMessage(urlSend);
-xhr.send(data);
-    
+     xhr = new XMLHttpRequest();
+     var url = "url";
+     xhr.setRequestHeader("Content-type", "application/json");
+     var data = sendMessage(urlSend);
+     xhr.send(data);
     }
     
