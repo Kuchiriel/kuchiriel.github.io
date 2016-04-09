@@ -153,6 +153,7 @@
      urlSend = urlSend.split('%20').join(' ').split('%22').join('').split('%27').join("'");
      xhr = new XMLHttpRequest();
      var url = "url";
+     xhr.open("POST", url, true);
      xhr.setRequestHeader("Content-type", "application/json");
      var data = sendMessage(urlSend);
      xhr.send(data);
