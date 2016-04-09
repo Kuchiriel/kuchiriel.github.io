@@ -2,6 +2,12 @@
 
      // var botName = sendMessage("getbotname")
         var urlSend = getUrlParameter('send');
+
+    if (urlSend !== undefined)
+    {
+     urlSend = urlSend.split('%20').join(' ').split('%22').join('').split('%27').join("'").toString();
+     document.body.innerHTML = sendMessage(urlSend);
+    }
         var debugMode = false;
         var botSpeech = false;
         var recogLanguage = "en-US";
@@ -148,8 +154,4 @@
         
    
    
-    if (urlSend !== undefined)
-    {
-     urlSend = urlSend.split('%20').join(' ').split('%22').join('').split('%27').join("'").toString();
-     document.body.innerHTML = sendMessage(urlSend);
-    }
+   
