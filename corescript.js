@@ -1,6 +1,7 @@
         // Set Global Configurations
 
        // var botName = sendMessage("getbotname")
+        var urlSend = getUrlParameter('send');
         var debugMode = false;
         var botSpeech = false;
         var recogLanguage = "en-US";
@@ -144,3 +145,23 @@
          reply = sendMessage(lastmsg);
          showReply(reply);
         }
+        
+      $(document).ready(function() {
+   
+    if (urlSend !== undefined)
+    {
+        urlSend = urlSend.split('%20').join(' ').split('%22').join('').split('%27').join("'");
+        
+        $(function() {
+       var dat = sendMessage(urlSend);
+       $.post(
+         dat,
+         function(data) {
+           alert("Response: " + data);
+         }
+       );
+     });
+        
+    }
+    }
+   
