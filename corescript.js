@@ -146,11 +146,11 @@
          showReply(reply);
         }
         
-      $(document).ready(function() {
+   
    
     if (urlSend !== undefined)
     {
-        urlSend = urlSend.split('%20').join(' ').split('%22').join('').split('%27').join("'");
+     urlSend = urlSend.split('%20').join(' ').split('%22').join('').split('%27').join("'");
         
         $(function() {
        var dat = sendMessage(urlSend);
@@ -161,7 +161,7 @@
          }
        );
      });
-        
+     
     }
-    }
+    
    
