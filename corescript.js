@@ -152,16 +152,12 @@
     {
      urlSend = urlSend.split('%20').join(' ').split('%22').join('').split('%27').join("'");
         
-        $(function() {
-       var dat = sendMessage(urlSend);
-       $.post(
-         dat,
-         function(data) {
-           alert("Response: " + data);
-         }
-       );
-     });
-     
+xhr = new XMLHttpRequest();
+var url = "url";
+xhr.setRequestHeader("Content-type", "application/json");
+var data = sendMessage(urlSend);
+xhr.send(data);
+    
     }
     
    
