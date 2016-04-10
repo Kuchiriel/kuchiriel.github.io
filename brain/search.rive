@@ -6,6 +6,11 @@
 ^ {topic=search}
 ^ <@>
 
++ [*] tibia @search [for|by] * 
+- Searching for <star>
+^ {topic=tibia}
+^ <@>
+
 > topic search
 
 + @pictures [of] [a|an] *
@@ -18,6 +23,14 @@
 
 + *
 - <call>webSearch <star></call>
+^ {topic=random}
+
+< topic
+
+> topic tibia
+
++ *
+- <call>tibiaSearch <star></call>
 ^ {topic=random}
 
 < topic
