@@ -17,21 +17,21 @@
         
     rs.setSubroutine('webSearch', function(rs, args) {
     //  var search = "https://kuchiriel.github.io/?q=";
-    //  OpenIn("_self", search + args);
-        executeQuery(args.join(" "), "search");
+        OpenIn("_self", search + args.join(" "));
+    //  executeQuery(args.join(" "), "search");
         console.log("Engine: Searching for " + args.join(" "))
     }); 
     
       rs.setSubroutine('picSearch', function(rs, args) {
     //  var search = "https://kuchiriel.github.io/?q=";
-    //  OpenIn("_self", search + args);
-        executeQuery(args.join(" "), "pic");
+        OpenIn("_self", search +  args.join(" "));
+    //  executeQuery(args.join(" "), "pic");
         console.log("Engine: Searching for " + args.join(" ") + " pictures.")
     }); 
 
     function OpenIn(target, url) {
         var win = window.open(url, target);
-       // win.focus();
+        win.focus();
     }
     
     function setSpeechVoice() {
