@@ -24,14 +24,14 @@
     
      rs.setSubroutine('tibiaSearch', function(rs, args) {
         var search = " http://www.tibiawiki.com.br/index.php?search=";
-        OpenIn("_self", search + args.join(" "));
+        OpenIn("_blank", search + args.join(" "));
     //  executeQuery(args.join(" "), "search");
         console.log("Engine: Searching for " + args.join(" "))
     }); 
     
       rs.setSubroutine('picSearch', function(rs, args) {
        var search = "https://kuchiriel.github.io/?q=";
-        OpenIn("_self", search +  args.join(" "));
+        OpenIn("_blank", search +  args.join(" "));
     //  executeQuery(args.join(" "), "pic");
         console.log("Engine: Searching for " + args.join(" ") + " pictures.")
     }); 
