@@ -17,7 +17,7 @@
         
     rs.setSubroutine('webSearch', function(rs, args) {
         var search = "https://www.google.com.br/#q=";
-        OpenIn("_self", search + args.join(" "));
+        OpenIn("_blank", search + args.join(" "));
     //  executeQuery(args.join(" "), "search");
         console.log("Engine: Searching for " + args.join(" "))
     }); 
