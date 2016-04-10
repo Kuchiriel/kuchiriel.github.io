@@ -6,7 +6,7 @@
 ^ {topic=search}
 ^ <@>
 
-+ [*] tibia @search [for|by] * 
++ [*] tibia [@search] [for|by] * 
 - Searching for <star>
 ^ {topic=tibia}
 ^ <@>
