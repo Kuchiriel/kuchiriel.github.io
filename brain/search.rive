@@ -11,6 +11,11 @@
 ^ {topic=tibia}
 ^ <@>
 
++ [*] [@search] tibia [for|by] * 
+- Searching for <star>
+^ {topic=tibia}
+^ <@>
+
 > topic search
 
 + @pictures [of] [a|an] *
