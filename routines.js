@@ -22,8 +22,9 @@
         console.log("Engine: Searching for " + args.join(" "))
     }); 
     
-     rs.setSubroutine('tibiaSearch', function(rs, args) {
-        var search = " http://www.tibiawiki.com.br/index.php?search=";
+
+     rs.setSubroutine('luckySearch', function(rs, args) {
+        var search = "https://www.google.com.br/#q=" + "&btnI";
         OpenIn("_blank", search + args.join(" "));
     //  executeQuery(args.join(" "), "search");
         console.log("Engine: Searching for " + args.join(" "))
