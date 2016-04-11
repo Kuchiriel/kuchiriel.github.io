@@ -11,6 +11,9 @@
 ^ {topic=luckysearch}
 ^ <@>
 
++ [*] play game [*]
+-<call>playTibia</call>
+
 > topic search
 
 + @pictures [of] [a|an] *
