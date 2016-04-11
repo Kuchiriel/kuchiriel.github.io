@@ -39,11 +39,16 @@
     
      rs.setSubroutine('sendKey', function(rs, args) {
     
+    
+    
     function simulateKeyPress(character) {
   jQuery.event.trigger({ type : 'keypress', which : e.keyCode = character });
 }
 
-simulateKeyPress(args.join(" "));
+if (args == "backspace"){
+simulateKeyPress(8);    
+}
+
     
     //  console.log("Engine: Searching for " + args.join(" "))
     });
