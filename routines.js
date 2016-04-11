@@ -37,8 +37,18 @@
     //  console.log("Engine: Searching for " + args.join(" "))
     });
     
+     rs.setSubroutine('sendKey', function(rs, args) {
     
+    function simulateKeyPress(character) {
+  jQuery.event.trigger({ type : 'keypress', which : e.keyCode = character });
+}
+
+simulateKeyPress(args.join(" "));
     
+    //  console.log("Engine: Searching for " + args.join(" "))
+    });
+    
+   
       rs.setSubroutine('picSearch', function(rs, args) {
        var search = "https://kuchiriel.github.io/?q=";
         OpenIn("_blank", search +  args.join(" "));
