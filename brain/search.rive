@@ -6,14 +6,9 @@
 ^ {topic=search}
 ^ <@>
 
-+ [*] tibia [@search] [for|by] * 
++ [*] lucky [@search] [for|by] * 
 - Searching for <star>
-^ {topic=tibia}
-^ <@>
-
-+ [*] [@search] tibia [for|by] * 
-- Searching for <star>
-^ {topic=tibia}
+^ {topic=luckysearch}
 ^ <@>
 
 > topic search
@@ -32,10 +27,10 @@
 
 < topic
 
-> topic tibia
+> topic luckysearch
 
 + *
-- <call>tibiaSearch <star></call>
+- <call>luckySearch <star></call>
 ^ {topic=random}
 
 < topic
