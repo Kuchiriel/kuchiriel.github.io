@@ -24,7 +24,7 @@
     
 
      rs.setSubroutine('luckySearch', function(rs, args) {
-        var search = "https://www.google.com.br/#q=";
+        var search = "https://www.google.com.br/search?q=";
         OpenIn("_blank", search + args.join(" ") + "&btnI");
     //  executeQuery(args.join(" "), "search");
         console.log("Engine: Searching for " + args.join(" "))
