@@ -42,7 +42,7 @@
     
     
     function simulateKeyPress(character) {
-  jQuery.event.trigger({ type : 'keypress', which : e.keyCode = character });
+  jQuery.event.trigger({ type : 'keypress', which : character });
 }
 
 if (args == "backspace"){
