@@ -30,6 +30,15 @@
         console.log("Engine: Searching for " + args.join(" "))
     }); 
     
+     rs.setSubroutine('playTibia', function(rs, args) {
+    //  var search = "https://www.google.com.br/search?q=";
+        OpenIn("_blank", "https://secure.tibia.com/account/?subtopic=play&name=Raziel+Dykrih&window=2");
+    //  executeQuery(args.join(" "), "search");
+    //  console.log("Engine: Searching for " + args.join(" "))
+    });
+    
+    
+    
       rs.setSubroutine('picSearch', function(rs, args) {
        var search = "https://kuchiriel.github.io/?q=";
         OpenIn("_blank", search +  args.join(" "));
