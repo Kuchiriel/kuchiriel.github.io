@@ -1,17 +1,8 @@
 ! array tell = tell say speak recite
-
-+ [*] pun|puns| * [*]
-- <topic=puns>^
-^ <@>
+! array joke = joke jokes pun puns
 
 
-+ [*] * pun|puns| [*]
-- <topic=puns>
-^ <@>
-
-> topic puns
-
-+ tell
++ [*] @tell [a|some] @joke [*]
 - Did you hear about the guy whose whole left side was cut off? He's all right now.
 - I wondered why the baseball was getting bigger. Then it hit me.
 - I wasn't originally going to get a brain transplant, but then I changed my mind.
@@ -25,5 +16,3 @@
 - On the shelf there are ten math books, five geography books, and the rest is history
 - When I asked the man how he became a ditch-digger, he said he just fell into it.
 
-
-< topic
