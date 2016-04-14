@@ -1,6 +1,6 @@
 ! array search = search research find look seek
 ! array pictures = pictures images picture image
-! array lucky = lucky luck
+! array lucky = lucky luck instant quick quickly
 ! array type = type write send insert
 
 + [*] @search [for|by] * 
@@ -12,23 +12,6 @@
 - Searching for <star>
 ^ {topic=luckysearch}
 ^ <@>
-
-+ [*] play game [*]
-- <call>playTibia</call>
-
-+ [*] @type * [*]
-- Typing <star>
-^ {topic=sendkey}
-^ <@>
-
-> topic sendkey
-
-+ backspace
-- <call>sendKey backspace</call>
-^ {topic=random}
-
-< topic
-
 
 > topic search
 
