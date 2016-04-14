@@ -1,15 +1,15 @@
-            if (annyang) {
+             if (annyang) {
 
              annyang.setLanguage(recogLanguage);
 
              var botCommand = {
-              '(hey) Samaritan *something': recogFunction
+              '(hey|hello|hi) Samaritan *something': recogFunction
              };
              var commandBot = {
-              '(hey) *something Samaritan': recogFunction
+              '(hey|hello|hi) *something Samaritan': recogFunction
              };
              var commandToggle = {
-              '(hey) Samaritan (hey)': tempRec
+              '(hey|hello|hi) Samaritan (hey|hello|hi)': tempRec
              };
              var tempCommand = {
               '*something': tempSend
@@ -20,28 +20,25 @@
               }
              };
 
-
              function recogFunction(something) {
               receiveReply(something);
              }
 
-
              function tempRec() {
+              receiveReply(agentName);
               annyang.removeCommands();
-              receiveReply("Samaritan");
               annyang.addCommands(tempCommand);
              }
 
              function tempSend(something) {
-              annyang.removeCommands();
               receiveReply(something);
+              annyang.removeCommands();
               addCommandsBack();
              }
 
              addCommandsBack();
-             console.log("Engine: Loaded Speech Recognition");
-
-             annyang.start({
+              console.log("Engine: Loaded Speech Recognition");
+              annyang.start({
               autoRestart: true
              });
             }
@@ -50,5 +47,5 @@
 
             if (urlSend !== undefined) {
              urlSend = urlSend.split('%20').join(' ').split('%22').join('').split('%27').join("'").toString();
-             document.body.innerHTML = receiveReply(urlSend.toString());
+             receiveReply(urlSend.toString());
             }
