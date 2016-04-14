@@ -1,6 +1,7 @@
      // Set Global Configurations
 
      // var botName = sendMessage("getbotname")
+        var agentName = "Samaritan";
         var debugMode = false;
         var botSpeech = false;
         var recogLanguage = "en-US";
