@@ -22,6 +22,12 @@
         console.log("Engine: Searching for " + args.join(" "))
     }); 
     
+    rs.setSubroutine('picSearch', function(rs, args) {
+       var search = "https://kuchiriel.github.io/?q=";
+        OpenIn("_blank", search +  args.join(" "));
+    //  executeQuery(args.join(" "), "pic");
+        console.log("Engine: Searching for " + args.join(" ") + " pictures.")
+    }); 
 
      rs.setSubroutine('luckySearch', function(rs, args) {
         var search = "https://www.google.com.br/search?q=";
@@ -31,36 +37,10 @@
     }); 
     
      rs.setSubroutine('playTibia', function(rs, args) {
-    //  var search = "https://www.google.com.br/search?q=";
-        OpenIn("_blank", "https://secure.tibia.com/account/?subtopic=play&name=Raziel+Dykrih&window=2");
-    //  executeQuery(args.join(" "), "search");
-    //  console.log("Engine: Searching for " + args.join(" "))
+        OpenIn("_blank", "https://secure.tibia.com/account/?subtopic=play");
+        console.log("Engine: Executing Tibia.)
     });
     
-     rs.setSubroutine('sendKey', function(rs, args) {
-    
-    
-    
-    function simulateKeyPress(character) {
-  jQuery.event.trigger({ type : 'keypress', which : character });
-}
-
-if (args == "backspace"){
-simulateKeyPress(8);    
-}
-
-    
-    //  console.log("Engine: Searching for " + args.join(" "))
-    });
-    
-   
-      rs.setSubroutine('picSearch', function(rs, args) {
-       var search = "https://kuchiriel.github.io/?q=";
-        OpenIn("_blank", search +  args.join(" "));
-    //  executeQuery(args.join(" "), "pic");
-        console.log("Engine: Searching for " + args.join(" ") + " pictures.")
-    }); 
-
     function OpenIn(target, url) {
         var win = window.open(url, target);
         win.focus();
