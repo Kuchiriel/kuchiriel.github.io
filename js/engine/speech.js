@@ -1,6 +1,9 @@
              if (annyang) {
+               
+             //var opt = "(hey|hello|hi)";
 
              annyang.setLanguage(recogLanguage);
+  
 
              var botCommand = {
               '(hey|hello|hi) Samaritan *something': recogFunction
